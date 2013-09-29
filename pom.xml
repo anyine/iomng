@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>sylarlove</groupId>
+	<artifactId>advance</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>advance</name>
+
+	<properties>
+		<!--编译版本 -->
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<!--项目编码 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--主要依赖库版本定 -->
+		<spring.version>3.2.4.RELEASE</spring.version>
+	</properties>
+	<dependencies>
+	</dependencies>
+	<build>
+		<finalName>advance</finalName>
+	</build>
+</project>
