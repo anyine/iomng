@@ -10,8 +10,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<description>spring公共配置</description>
-
-	<context:component-scan base-package="sylarlove.advance">
+<!-- 加入车辆人员出入管理系统扫描路径 -->
+	<context:component-scan base-package="sylarlove.advance,cn.huijin.vms">
 		<context:exclude-filter type="annotation" 	expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation"  expression="org.springframework.web.bind.annotation.ControllerAdvice" />
 	</context:component-scan>
@@ -85,8 +85,14 @@
 	</bean>
 	<!--消息资源配置  -->
 	<bean id="messageSource"   class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
-        <property name="basename" value="classpath:messages/*Messages"/>  
-        <property name="fileEncodings" value="utf-8"/>  
-        <!-- <property name="cacheSeconds" value="120"/>   -->
+        <property name="basenames">
+        	<list>
+        		<value>classpath:messages/exceptionMessages</value>
+        		<value>classpath:messages/validationMessages</value>
+        	</list>
+        </property>
+        <property name="cacheSeconds" value="120"/>
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="useCodeAsDefaultMessage" value="false"/>
 </bean>   
 </beans>
