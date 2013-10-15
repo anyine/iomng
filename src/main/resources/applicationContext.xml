@@ -78,21 +78,4 @@
 	<!--添加车辆人员出入管理系统dao扫描路径  -->
  	<jpa:repositories base-package="sylarlove.advance,cn.huijin.vms.dao"  transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory"/>
 	
-	<!--jsr303验证配置  -->
-	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		<property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
-		<property name="validationMessageSource"  ref="messageSource"/>
-	</bean>
-	<!--消息资源配置  -->
-	<bean id="messageSource"   class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
-        <property name="basenames">
-        	<list>
-        		<value>classpath:messages/exceptionMessages</value>
-        		<value>classpath:messages/validationMessages</value>
-        	</list>
-        </property>
-        <property name="cacheSeconds" value="120"/>
-        <property name="defaultEncoding" value="utf-8"/>
-        <property name="useCodeAsDefaultMessage" value="false"/>
-</bean>   
 </beans>

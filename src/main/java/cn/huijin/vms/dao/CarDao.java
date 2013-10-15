@@ -26,5 +26,5 @@ public interface CarDao extends JpaRepository<Car, Long>{
 	 */
 	Car findByLicense(String license);
 	
-
+	Car findByRfidAndLicenseNot(String rfid,String license);
 }

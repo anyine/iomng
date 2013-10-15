@@ -2,6 +2,7 @@ package sylarlove.advance.dao;
 
 import java.util.Date;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.unitils.UnitilsJUnit4;
 import org.unitils.database.annotations.Transactional;
@@ -49,5 +50,18 @@ public class CarDaoTest extends UnitilsJUnit4 {
 		Car actual=carDao.findByRfid(expected.getRfid());
 		ReflectionAssert.assertReflectionEquals(expected, actual, ReflectionComparatorMode.LENIENT_DATES);
 
+	}
+
+	@Test
+	public void findByRfidAndLicenseNot() {
+		CarType ct=carTypeDao.findOne(1L);
+		Car car=new Car();
+		car.setCreateTime(new Date());
+		car.setLicense("WJ鲁0811X");
+		car.setRfid("123456");
+		car.setType(ct);
+		carDao.save(car);
+		Car actual=carDao.findByRfidAndLicenseNot(car.getRfid(),car.getLicense());
+		Assert.assertNull(actual);
 	}
 }

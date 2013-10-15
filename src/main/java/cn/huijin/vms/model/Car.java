@@ -35,12 +35,12 @@ public class Car extends IdEntity{
 	/**
 	 * 车牌号
 	 */
-	@NotEmpty
-	@Length(max=10)
-	@Column(length=10,unique=true)
+	@NotEmpty(message="{Car.license.NotEmpty}")
+	@Length(max=10,message="{Car.license.Length}")
+	@Column(length=10,unique=true,updatable=false)
 	private String license;
 	
-	@Length(max=32)
+	@Length(max=32,message="{Car.rfid.Length}")
 	@Column(length=32)
 	private String rfid;
 	/**

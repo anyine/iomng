@@ -14,4 +14,19 @@ import cn.huijin.vms.model.CarType;
  */
 public interface CarTypeDao extends JpaRepository<CarType, Long>{
 
+	/**
+	 * 通过名字查找车辆类型
+	 * @param name
+	 * @return
+	 */
+	CarType findByName(String name);
+
+	/**
+	 * 
+	 * @param name
+	 * @param id
+	 * @return
+	 */
+	CarType findByNameAndIdNot(String name, Long id);
+
 }

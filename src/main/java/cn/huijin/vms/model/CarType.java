@@ -6,6 +6,7 @@ package cn.huijin.vms.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -33,7 +34,7 @@ public class CarType extends IdEntity {
 	@Column(length=32,unique=true)
 	private String name;
 	
-	@OneToMany(mappedBy="type")
+	@OneToMany(mappedBy="type",cascade={CascadeType.REMOVE})
 	private Set<Car> cars=new HashSet<Car>();
 
 	public String getName() {
