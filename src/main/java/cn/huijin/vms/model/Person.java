@@ -4,10 +4,17 @@
 package cn.huijin.vms.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -23,8 +30,8 @@ import sylarlove.advance.model.IdEntity;
  *
  */
 @Entity
-@Table(name="t_person")
-public class Person extends IdEntity{
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public abstract class Person extends IdEntity{
 
 	/**
 	 * 
@@ -34,50 +41,59 @@ public class Person extends IdEntity{
 	@Length(max=32,message="{Person.name.Length}")
 	@Column(unique=true,length=32,updatable=false)
 	private String name;
-	@NotEmpty(message="{Person.name.NotEmpty}")
-	@Length(max=32,message="{Person.name.Length}")
-	private String realname;
-	@Length(max=32,message="{Person.rfid.Length}")
-	@Column(length=32)
-	private String rfid;
-	
-	private String status="in";
+	@Length(max=5,message="{Person.sex.Length}")
+	@Column(length=5)
+	private String sex="man";
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
+	@JoinColumn(name="card_id")
+	private Card card;
+	private StatusType status=StatusType.IN;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_time")
-	private Date createTime;
+	private Date createTime=new Date();
+	@OneToMany(cascade=CascadeType.REMOVE,mappedBy="person")
+	private Set<InnerPersonRecord> personRecords=new HashSet<InnerPersonRecord>();
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getRealname() {
-		return realname;
+	
+	public Card getCard() {
+		return card;
 	}
-	public void setRealname(String realname) {
-		this.realname = realname;
+	public void setCard(Card card) {
+		this.card = card;
 	}
-	public String getRfid() {
-		return rfid;
-	}
-	public void setRfid(String rfid) {
-		this.rfid = rfid;
-	}
-	public String getStatus() {
+
+	public StatusType getStatus() {
 		return status;
 	}
-	/**
-	 * 设置人员状态、in 、 out
-	 * @param status
-	 */
-	public void setStatus(String status) {
+	public void setStatus(StatusType status) {
 		this.status = status;
+	}
+	public Set<InnerPersonRecord> getPersonRecords() {
+		return personRecords;
+	}
+	public void setPersonRecords(Set<InnerPersonRecord> personRecords) {
+		this.personRecords = personRecords;
 	}
 	public Date getCreateTime() {
 		return createTime;
 	}
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+	public String getSex() {
+		return sex;
+	}
+	/**
+	 * 设置性别 man,woman
+	 * @param sex
+	 */
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 	
 	

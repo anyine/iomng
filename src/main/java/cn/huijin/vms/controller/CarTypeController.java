@@ -3,16 +3,19 @@
  */
 package cn.huijin.vms.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import sylarlove.advance.exception.ExistedException;
 import sylarlove.advance.exception.ServiceException;
@@ -31,73 +34,65 @@ public class CarTypeController {
 	@Inject
 	private ICarTypeService carTypeService;
 	
-	private final String ADD="carType/add";
 	private final String LIST="carType/list";
-	private final String SHOW="carType/show";
-	private final String UPDATE="carType/update";
-	private final String ERROR="carType/error";
 	
-
-	@RequestMapping(value="/update/{id}",method=RequestMethod.GET)
-	public String update(@PathVariable Long id,Model model){
-		model.addAttribute(carTypeService.getOne(id));
-		return UPDATE;
-	}
-	
-	@RequestMapping(value="/update/{id}",method=RequestMethod.POST)
-	public String update(@Valid CarType carType,Errors errors,Model model){
+	@RequestMapping(value="/update",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,Object> update(@RequestBody @Valid CarType carType,Errors errors){
+		Map<String,Object> result=new HashMap<String, Object>();
 		if(errors.hasErrors()){
-			return UPDATE;
+			result.put("success", false);
+			result.put("message","验证错误。");
+			return result;
 		}
 			try {
 				carTypeService.update(carType);
+				result.put("success", true);
 			} catch (ExistedException e) {
-				model.addAttribute("errorMsg", e.getMessage());
-				return UPDATE;
+				result.put("success", false);
+				result.put("message",e.getMessage());
 			}
-		return "redirect:/carType/";
+			return result;
 	}
 	
-	@RequestMapping(value="/{id}",method=RequestMethod.GET)
-	public String show(@PathVariable Long id,Model model){
-		model.addAttribute(carTypeService.getOne(id));
-		return SHOW;
-	}
 	
-	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET)
-	public String delete(@PathVariable Long id,Model model){
+	@RequestMapping(value="/delete",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,Object> delete(@RequestBody CarType carType){
+		Map<String,Object> result=new HashMap<String, Object>();
 		try {
-			carTypeService.delete(id);
+			carTypeService.delete(carType.getId());
+			result.put("success", true);
 		} catch (ServiceException e) {
-			model.addAttribute("errorMsg", e.getMessage());
-			return ERROR;
+			result.put("success", false);
+			result.put("message",e.getMessage());
 		}
-		return "redirect:/carType/";
+		return result;
 	}
-	
 	
 	@RequestMapping(value={"/carTypes","/",""},method=RequestMethod.GET)
 	public String list(Model model){
 		model.addAttribute("carTypeList",carTypeService.list());
 		return LIST;
 	}
-	@RequestMapping(value="/add",method=RequestMethod.GET)
-	public String add(@ModelAttribute CarType carType){
-		return ADD;
-	}
 	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
-	public String add(@ModelAttribute CarType carType,Errors errors,Model model){
+	@ResponseBody
+	public Map<String,Object> add(@RequestBody CarType carType,Errors errors){
+		Map<String,Object> result=new HashMap<String, Object>();
 		if(errors.hasErrors()){
-			return ADD;
+			result.put("success", false);
+			result.put("message","验证错误。");
+			return result;
 		}
 		try {
 			carTypeService.add(carType);
+			result.put("success", true);
 		} catch (ExistedException e) {
-			model.addAttribute("errorMsg", e.getMessage());
-			return ADD;
+			result.put("success", false);
+			result.put("message",e.getMessage());
 		}
-		return "redirect:/carType/";
+		return result;
 	}
 	
 }

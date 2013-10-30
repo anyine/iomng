@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
 import org.hibernate.validator.constraints.Length;
 
 import sylarlove.advance.model.IdEntity;
@@ -35,7 +36,7 @@ public class CarType extends IdEntity {
 	private String name;
 	
 	@OneToMany(mappedBy="type",cascade={CascadeType.REMOVE})
-	private Set<Car> cars=new HashSet<Car>();
+	private Set<InnerCar> innerCars=new HashSet<InnerCar>();
 
 	public String getName() {
 		return name;
@@ -44,13 +45,14 @@ public class CarType extends IdEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Set<Car> getCars() {
-		return cars;
+	
+	@JsonBackReference
+	public Set<InnerCar> getInnerCars() {
+		return innerCars;
 	}
 
-	public void setCars(Set<Car> cars) {
-		this.cars = cars;
+	public void setInnerCars(Set<InnerCar> innerCars) {
+		this.innerCars = innerCars;
 	}
 	
 }

@@ -15,7 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!--主要依赖库版本定 -->
 		<spring.version>3.2.4.RELEASE</spring.version>
-		<spring-data-jpa.version>1.3.4.RELEASE</spring-data-jpa.version>
+		<spring-data-jpa.version>1.4.1.RELEASE</spring-data-jpa.version>
 		<hibernate.version>4.2.6.Final</hibernate.version>
 		<hibernate-c3p0.version>4.2.5.Final</hibernate-c3p0.version>
 		<slf4j.version>1.7.5</slf4j.version>
@@ -325,6 +325,17 @@
 				<scope>test</scope>
 			</dependency>
 			<!--test end -->
+			<!--json  -->
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-core-asl</artifactId>
+				<version>1.8.8</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>1.8.8</version>
+			</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -332,6 +343,9 @@
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.0</version>
+				<configuration>
+					<port>8090</port>
+				</configuration>
 			</plugin>
 			
 			<plugin>

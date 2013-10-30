@@ -4,12 +4,19 @@
 package cn.huijin.vms.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -25,8 +32,8 @@ import sylarlove.advance.model.IdEntity;
  *
  */
 @Entity
-@Table(name="t_car")
-public class Car extends IdEntity{
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public abstract class Car extends IdEntity{
 
 	/**
 	 * 
@@ -39,29 +46,27 @@ public class Car extends IdEntity{
 	@Length(max=10,message="{Car.license.Length}")
 	@Column(length=10,unique=true,updatable=false)
 	private String license;
-	
-	@Length(max=32,message="{Car.rfid.Length}")
-	@Column(length=32)
-	private String rfid;
+
+	@OneToMany(cascade=CascadeType.REMOVE,mappedBy="car")
+	private Set<InnerCarRecord> carRecords=new HashSet<InnerCarRecord>();
+
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
+	@JoinColumn(name="car_id")
+	private Card card;
 	/**
 	 * 添加日期
 	 */
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_time",updatable=false)
-	private Date createTime;
+	private Date createTime=new Date();
 	
 	/**
 	 * 车辆状态
 	 * in,out
 	 */
-	private String status="in";
+	@Enumerated(EnumType.STRING)
+	private StatusType status=StatusType.IN;
 
-	/**
-	 * 车辆类型
-	 */
-	@ManyToOne(optional=false)
-	@JoinColumn(name="car_type_id")
-	private CarType type;
 
 	public String getLicense() {
 		return license;
@@ -71,12 +76,13 @@ public class Car extends IdEntity{
 		this.license = license;
 	}
 
-	public String getRfid() {
-		return rfid;
+
+	public Card getCard() {
+		return card;
 	}
 
-	public void setRfid(String rfid) {
-		this.rfid = rfid;
+	public void setCard(Card card) {
+		this.card = card;
 	}
 
 	public Date getCreateTime() {
@@ -87,21 +93,21 @@ public class Car extends IdEntity{
 		this.createTime = createTime;
 	}
 
-	public CarType getType() {
-		return type;
-	}
-
-	public void setType(CarType type) {
-		this.type = type;
-	}
-
-	public String getStatus() {
+	public StatusType getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(StatusType status) {
 		this.status = status;
 	}
-	
+
+	public Set<InnerCarRecord> getCarRecords() {
+		return carRecords;
+	}
+
+	public void setCarRecords(Set<InnerCarRecord> carRecords) {
+		this.carRecords = carRecords;
+	}
+
 	
 }

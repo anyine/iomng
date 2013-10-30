@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+package sylarlove.advance.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import sylarlove.advance.dao.OrganizationDao;
+import sylarlove.advance.exception.ExistedException;
+import sylarlove.advance.model.main.Organization;
+
+/**
+ * @author 武继明
+ *  @since 2013年10月16日  上午9:12:21
+ *
+ */
+@Service
+@Transactional
+public class OrganizationService implements IOrganizationService{
+	@Inject
+	private OrganizationDao organizationDao;
+	@Override
+	public void add(Organization organization) {
+		Organization exist=organizationDao.findByParentIdAndName(organization.getParent().getId(), organization.getName());
+		if(exist!=null){
+			throw new ExistedException("机构已存在。");
+		}
+		organizationDao.save(organization);
+	}
+	
+
+	@Override
+	public Organization getRoot() {
+		return organizationDao.findOne(0L);
+	}
+
+
+	@Override
+	public List<Organization> getByParentId(Long parentId) {
+		parentId=parentId==null?0L:parentId;
+		return organizationDao.findByParentId(parentId);
+	}
+	
+}

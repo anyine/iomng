@@ -7,6 +7,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -58,12 +60,15 @@ public class User extends IdEntity{
 	@Column(length=128)
 	private String email;
 	
+	@ManyToOne
+	@JoinColumn(name="organization_id")
+	private Organization organization;
 	/**
 	 * 用户创建时间
 	 */
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_time",updatable=false)
-	private Date createTime;
+	private Date createTime=new Date();
 	
 	/**
 	 * 使用状态 disabled,enabled
@@ -120,6 +125,13 @@ public class User extends IdEntity{
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public Organization getOrganization() {
+		return organization;
+	}
+	public void setOrganization(Organization organization) {
+		this.organization = organization;
 	}
 	public User(String username, String realname, String password,
 			String plainPassword, String phone, String email, Date createTime,

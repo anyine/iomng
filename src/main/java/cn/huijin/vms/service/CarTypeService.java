@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,7 +30,7 @@ public class CarTypeService implements ICarTypeService{
 
 	@Override
 	public List<CarType> list() {
-		return carTypeDao.findAll();
+		return carTypeDao.findAll(new Sort(Direction.ASC, "id"));
 	}
 	@Override
 	public void add(CarType carType) {

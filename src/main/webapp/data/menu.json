@@ -1,0 +1,55 @@
+[{
+	"id" : "1",
+	"parentId" : "1",
+	"text" : "出入查询",
+	"leaf" : "0",
+	"children" : [ {
+		"id" : "innercarrecordlist",
+		"parentId" : "2",
+		"text" : "内部车辆出入记录",
+		"leaf" : "1",
+		"children" : ""
+	} ]
+}, {
+	"id" : "2",
+	"parentId" : "1",
+	"text" : "基本信息",
+	"leaf" : "0",
+	"children" : [ {
+		"id" : "innercarlist",
+		"parentId" : "2",
+		"text" : "车辆管理",
+		"leaf" : "1",
+		"children" : ""
+	}, {
+		"id" : "doorlist",
+		"parentId" : "2",
+		"text" : "门禁管理",
+		"leaf" : "1",
+		"children" : ""
+	} ]
+}, {
+	"id" : "3",
+	"parentId" : "1",
+	"text" : "数据字典",
+	"leaf" : "0",
+	"children" : [ {
+		"id" : "cartypelist",
+		"parentId" : "3",
+		"text" : "车辆类型维护",
+		"leaf" : "1",
+		"children" : ""
+	}, {
+		"id" : "organizationtree",
+		"parentId" : "3",
+		"text" : "机构维护",
+		"leaf" : "1",
+		"children" : ""
+	}, {
+		"id" : "userlist",
+		"parentId" : "3",
+		"text" : "用户管理",
+		"leaf" : "1",
+		"children" : ""
+	} ]
+} ]

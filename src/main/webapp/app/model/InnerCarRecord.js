@@ -1,0 +1,9 @@
+Ext.define('VMS.model.InnerCarRecord',{
+	extend:'Ext.data.Model',
+	fields:[
+	        {name:'type',type:'varchar'},
+	        {name:'date',type:'date'},
+	        {name:'car.license',type:'varchar'},
+	        {name:'status',type:'varchar'}
+	        ]
+});
