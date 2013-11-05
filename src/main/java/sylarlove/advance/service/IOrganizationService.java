@@ -29,4 +29,14 @@ public interface IOrganizationService {
 	 * @param parentId
 	 */
 	public List<Organization> getByParentId(Long parentId);
+	/**
+	 * 更新机构
+	 * @param organization
+	 */
+	public void update(Organization organization);
+	/**
+	 * 删除机构
+	 * @param id
+	 */
+	public void delete(Long id);
 }

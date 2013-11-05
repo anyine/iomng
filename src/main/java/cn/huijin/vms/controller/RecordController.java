@@ -20,15 +20,21 @@ import cn.huijin.vms.service.IRecordService;
  */
 @Controller
 @RequestMapping("/record")
-public class InnerCarRecordController {
+public class RecordController {
 	@Inject
 	private IRecordService recordService;
 	
 	private final String INNERCARRECORDLIST="innerCarRecord/list";
+	private final String INNERPERSONRECORDLIST="innerPersonRecord/list";
 	
 	@RequestMapping(value={"/innerCarRecords"},method=RequestMethod.GET)
-	public String list(Model model){
+	public String listInnerCarRecords(Model model){
 		model.addAttribute(recordService.listInnerCarRecord() );
 		return INNERCARRECORDLIST;
+	}
+	@RequestMapping(value={"/innerPersonRecords"},method=RequestMethod.GET)
+	public String listInnerPersonRecords(Model model){
+		model.addAttribute(recordService.listInnerPersonRecord() );
+		return INNERPERSONRECORDLIST;
 	}
 }

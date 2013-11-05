@@ -63,7 +63,7 @@ public class InnerCarController {
 	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
 	@ResponseBody
-	public  Map<String,Object> add(@ModelAttribute InnerCar innerCar,Errors errors){
+	public  Map<String,Object> add(@ModelAttribute @Valid InnerCar innerCar,Errors errors){
 		Map<String,Object> result=new HashMap<String, Object>();
 		if(errors.hasErrors()){
 			result.put("success", false);

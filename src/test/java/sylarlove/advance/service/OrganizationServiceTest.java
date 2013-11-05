@@ -58,5 +58,10 @@ public class OrganizationServiceTest extends UnitilsJUnit4{
 		c5.setName("特勤中队");
 		c5.setParent(parent);
 		organizationServcie.add(c5);
+		
+	}
+	@Test
+	public void delete(){
+		organizationServcie.delete(65537L);
 	}
 }

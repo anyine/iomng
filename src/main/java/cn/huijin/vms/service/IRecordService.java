@@ -6,7 +6,8 @@ package cn.huijin.vms.service;
 import java.util.List;
 
 import cn.huijin.vms.model.InnerCarRecord;
-import cn.huijin.vms.model.Result;
+import cn.huijin.vms.model.InnerPersonRecord;
+import cn.huijin.vms.webservice.RecordResult;
 
 /**
  * 出入记录服务接口
@@ -21,8 +22,13 @@ public interface IRecordService {
 	 * @param number 卡号
 	 * @return
 	 */
-	public Result add(String controllerSn,String readerNumber,String number);
+	public RecordResult add(String controllerSn,String readerNumber,String number);
 	
 	public List<InnerCarRecord>  listInnerCarRecord();
+
+	/**
+	 * @return
+	 */
+	public List<InnerPersonRecord> listInnerPersonRecord();
 	
 }

@@ -3,12 +3,13 @@
  */
 package sylarlove.advance.model.main;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -37,16 +38,18 @@ public class Organization extends IdEntity{
 	private static final long serialVersionUID = 1L;
 	@NotEmpty(message="机构名称不能为空")
 	@Length(max=32,message="机构名称长度最大为{max}")
-	@Column( length=32,unique=true)
+	@Column( length=32)
 	private String name;
 	@Column(name="[index]")
 	private Integer index;
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="parent_id")
 	public Organization  parent;
-	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.REMOVE},mappedBy="parent")
+	
+	@OneToMany(cascade={CascadeType.ALL},mappedBy="parent",fetch=FetchType.LAZY)
 	@OrderBy("index ASC")
-	public Set<Organization>  children=new HashSet<Organization>();
+	public List<Organization>  children=new ArrayList<Organization>();
+	
 	public Integer getIndex() {
 		return index;
 	}
@@ -64,17 +67,17 @@ public class Organization extends IdEntity{
 	public void setParent(Organization parent) {
 		this.parent = parent;
 	}
-	public Set<Organization> getChildren() {
-		return children;
-	}
-	public void setChildren(Set<Organization> children) {
-		this.children = children;
-	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public List<Organization> getChildren() {
+		return children;
+	}
+	public void setChildren(List<Organization> children) {
+		this.children = children;
 	}
 	
 	

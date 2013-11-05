@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Sort;
@@ -18,6 +20,7 @@ import sylarlove.advance.dao.UserDao;
 import sylarlove.advance.exception.ExistedException;
 import sylarlove.advance.exception.ServiceException;
 import sylarlove.advance.model.main.User;
+import sylarlove.advance.realm.ShiroDbRealm;
 
 /**
  * 
@@ -42,9 +45,8 @@ public class UserService implements IUserService{
 		if(exist!=null){
 			throw new ExistedException("该用户已存在。");
 		}
-		//TODO 用户密码加密
 		//默认密码 123456
-		user.setPassword("123456");
+		user.setPassword(ShiroDbRealm.encryptPassword("123456"));
 		userDao.save(user);
 	}
 	@Override
@@ -65,6 +67,15 @@ public class UserService implements IUserService{
 			throw new ServiceException("超级管理员账户不能删除。");
 		}
 		userDao.delete(id);
+	}
+	@Override
+	public User getByUsername(String username) {
+		return userDao.findByUsername(username);
+	}
+	@Override
+	public void login(String username, String password, Boolean rememberMe) {
+		UsernamePasswordToken token=new UsernamePasswordToken(username, password, rememberMe);
+		SecurityUtils.getSubject().login(token);
 	}
 	
 }

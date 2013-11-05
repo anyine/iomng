@@ -4,9 +4,6 @@ Ext.define('VMS.view.Tree', {
     title: '菜单',
     
     rootVisible: false,
-    requires: [
-        'VMS.view.Menu'
-    ],
     cls: 'examples-list',
     lines: false,
     collapsible : true,

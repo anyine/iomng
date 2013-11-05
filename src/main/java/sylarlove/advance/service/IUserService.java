@@ -42,4 +42,12 @@ public interface IUserService {
 	 * @param id
 	 */
 	void delete(Long id) throws ServiceException;
+	/**
+	 * 
+	 * @param username
+	 * @return
+	 */
+	User getByUsername(String username);
+	
+	void login(String username,String password,Boolean rememberMe);
 }

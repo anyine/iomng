@@ -1,0 +1,10 @@
+.in-row .x-grid-cell {
+	background-color: #FFFFDD;
+}
+
+.out-row .x-grid-cell {
+	background-color: #CED9E7;
+}
+.waring-row .x-grid-cell {
+	background-color: #FF6A6A;
+}

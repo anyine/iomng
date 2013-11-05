@@ -23,8 +23,19 @@ public interface InnerPersonDao extends JpaRepository<InnerPerson, Long>{
 	/**
 	 * 
 	 * @param cardNumber
+	 * @param id
+	 * @return
+	 */
+	InnerPerson findByCardNumberAndIdNot(String cardNumber,Long id);
+	/**
 	 * @param certificate
 	 * @return
 	 */
-	InnerPerson findByCardNumberAndCertificateNot(String cardNumber,String Certificate);
+	InnerPerson findByCertificate(String certificate);
+	/**
+	 * @param certificate
+	 * @param id
+	 * @return
+	 */
+	InnerPerson findByCertificateAndIdNot(String certificate, Long id);
 }

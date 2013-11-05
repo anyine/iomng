@@ -47,6 +47,11 @@ public class InnerCarRecord extends Record{
 	public String getStatus() {
 		return status;
 	}
+	/**
+	 * 设置记录状态
+	 * normal 正常，warning 警告
+	 * @param status
+	 */
 	public void setStatus(String status) {
 		this.status = status;
 	}

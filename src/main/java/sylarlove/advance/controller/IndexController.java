@@ -3,8 +3,17 @@
  */
 package sylarlove.advance.controller;
 
+
+import javax.inject.Inject;
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import sylarlove.advance.service.IUserService;
 
 /**
  * @author 武继明
@@ -13,8 +22,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
-	@RequestMapping("/")
+	@Inject
+	private IUserService userService;
+	@RequestMapping(value={"/index","/"})
 	public String index(){
-		return "redict:/index";
+		return "index";
+	}
+	@RequestMapping(value="/login",method=RequestMethod.GET)
+	public String login(@ModelAttribute LoginCommand loginCommand){
+		return "login";
+	}
+	@RequestMapping(value="/login",method=RequestMethod.POST)
+	public String login(@ModelAttribute @Valid LoginCommand loginCommand,Errors errors){
+		if(errors.hasErrors()){
+			return "login";
+		}
+		try {
+			userService.login(loginCommand.getUsername(), loginCommand.getPassword(), loginCommand.getRememberMe());
+		} catch (Exception e) {
+			return "login";
+		}
+		return "redirect:/index";
 	}
 }

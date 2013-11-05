@@ -18,4 +18,10 @@ import sylarlove.advance.model.main.Organization;
 public interface OrganizationDao extends JpaRepository<Organization, Long>{
 	Organization  findByParentIdAndName(Long parentId,String name);
 	List<Organization>  findByParentId(Long parentId);
+	/**
+	 * @param id
+	 * @param name
+	 * @param id2
+	 */
+	Organization  findByParentIdAndNameAndIdNot(Long parentId, String name, Long id);
 }

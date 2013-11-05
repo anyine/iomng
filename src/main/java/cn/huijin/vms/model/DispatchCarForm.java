@@ -45,7 +45,7 @@ public class DispatchCarForm extends IdEntity{
 	private Date endTime;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_time")
-	private Date createTime;
+	private Date createTime=new Date();
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="approve_time")
 	private Date approveTime;

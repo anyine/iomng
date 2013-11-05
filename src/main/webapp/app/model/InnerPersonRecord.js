@@ -1,0 +1,9 @@
+Ext.define('VMS.model.InnerPersonRecord',{
+	extend:'Ext.data.Model',
+	fields:[
+	        {name:'type',type:'varchar'},
+	        {name:'date',type:'date'},
+	        {name:'person.name',type:'varchar'},
+	        {name:'status',type:'varchar'}
+	        ]
+});

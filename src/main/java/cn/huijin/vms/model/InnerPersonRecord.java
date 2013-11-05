@@ -60,6 +60,9 @@ public class InnerPersonRecord extends Record{
 		this.setType(type);
 		this.person = person;
 	}
+	public InnerPersonRecord() {
+		super();
+	}
 	
 	
 	

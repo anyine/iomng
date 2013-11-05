@@ -1,7 +1,7 @@
-Ext.define('VMS.view.Menu',{
+Ext.define('VMS.view.organization.Menu',{
 	extend: 'Ext.menu.Menu',
-	xtype: 'Menu',
-	requires:['VMS.view.Edit'],
+	xtype: 'organizationmenu',
+	requires:['VMS.view.organization.Edit'],
 	items:[{
 		text:'编辑',
 		action: 'edit'

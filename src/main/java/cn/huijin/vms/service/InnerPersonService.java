@@ -44,6 +44,11 @@ public class InnerPersonService implements IInnerPersonService {
 		if (exist != null) {
 			throw new ExistedException("卡号已存在。");
 		}
+		//检查证件号是否存在
+		exist=innerPersonDao.findByCertificate(innerPerson.getCertificate());
+		if (exist != null) {
+			throw new ExistedException("证件号已存在。");
+		}
 		innerPerson.getCard().setCardType(CardType.PERSON);//设置卡类型为人员卡
 		innerPersonDao.save(innerPerson);
 	}
@@ -61,10 +66,15 @@ public class InnerPersonService implements IInnerPersonService {
 	@Override
 	public void update(InnerPerson innerPerson) {
 		// 检查RFID是否重复，如果存在则抛出异常
-		InnerPerson exist = innerPersonDao.findByCardNumberAndCertificateNot(innerPerson.getCard().getNumber(),innerPerson.getCertificate());
+		InnerPerson exist = innerPersonDao.findByCardNumberAndIdNot(innerPerson.getCard().getNumber(),innerPerson.getId());
 		if (exist != null) {
 			throw new ExistedException("RFID已存在");
 		}
+		exist=innerPersonDao.findByCertificateAndIdNot(innerPerson.getCertificate(),innerPerson.getId());
+		if (exist != null) {
+			throw new ExistedException("证件号已存在。");
+		}
+		innerPerson.getCard().setCardType(CardType.PERSON);//设置卡类型为人员卡
 		innerPersonDao.save(innerPerson);
 	}
 

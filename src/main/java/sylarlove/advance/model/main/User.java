@@ -3,11 +3,14 @@
  */
 package sylarlove.advance.model.main;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -77,6 +80,9 @@ public class User extends IdEntity{
 	@Length(max=16)
 	@Column(nullable=false,length=16)
 	private String status="enabled";
+	@ManyToMany
+	@JoinColumn(name="user_id")
+	private List<Role> roles=new ArrayList<Role>();
 	
 	public String getUsername() {
 		return username;
@@ -133,6 +139,13 @@ public class User extends IdEntity{
 	public void setOrganization(Organization organization) {
 		this.organization = organization;
 	}
+	
+	public List<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
 	public User(String username, String realname, String password,
 			String plainPassword, String phone, String email, Date createTime,
 			String status) {
@@ -148,5 +161,9 @@ public class User extends IdEntity{
 	}
 	
 	public User(){}
+	@Override
+	public String toString() {
+		return this.username;
+	}
 
 }

@@ -4,6 +4,7 @@
 package cn.huijin.vms.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -28,7 +29,7 @@ public class InnerPerson extends Person{
 	private static final long serialVersionUID = 1L;
 	@NotEmpty(message="证件号码不能为空")
 	private String certificate;
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="organization_id")
 	private Organization organization;
 	public String getCertificate() {

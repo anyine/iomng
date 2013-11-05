@@ -10,6 +10,8 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
@@ -39,14 +41,15 @@ public abstract class Person extends IdEntity{
 	private static final long serialVersionUID = 1L;
 	@NotEmpty(message="{Person.name.NotEmpty}")
 	@Length(max=32,message="{Person.name.Length}")
-	@Column(unique=true,length=32,updatable=false)
+	@Column(unique=true,length=32)
 	private String name;
 	@Length(max=5,message="{Person.sex.Length}")
 	@Column(length=5)
 	private String sex="man";
-	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
+	@OneToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="card_id")
 	private Card card;
+	@Enumerated(EnumType.STRING)
 	private StatusType status=StatusType.IN;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_time")

@@ -11,6 +11,7 @@ Ext.onReady(function() {
 		name : 'VMS',
 		appFolder : 'app',
 		autoCreateViewport : true,
-		controllers : [ 'Main', 'InnerCarCtrl', 'DoorCtrl', 'CarTypeCtrl','UserCtrl','InnerCarRecordCtrl']
+		controllers : [ 'Main', 'InnerCarCtrl', 'DoorCtrl', 'CarTypeCtrl',
+				'UserCtrl', 'InnerCarRecordCtrl', 'InnerPersonRecordCtrl', 'OrganizationCtrl','InnerPersonCtrl']
 	});
 });
