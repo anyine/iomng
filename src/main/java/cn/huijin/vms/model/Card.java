@@ -3,6 +3,7 @@
  */
 package cn.huijin.vms.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -30,6 +31,7 @@ public class Card extends IdEntity{
 	
 	@NotEmpty(message="{Card.number.NotEmpty}")
 	@Length(max=32,message="{Card.number,Length}")
+	@Column(unique=true)
 	private String number;
 	
 	@Enumerated(EnumType.STRING)

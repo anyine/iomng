@@ -29,7 +29,7 @@ import cn.huijin.vms.model.StatusType;
 public class InnerPersonService implements IInnerPersonService {
 	final static Logger logger = LoggerFactory.getLogger(InnerPersonService.class);
 	@Inject
-	private InnerPersonDao innerPersonDao;
+	private InnerPersonDao innerPersonDao;	
 
 	@Override
 	public List<InnerPerson> list() {

@@ -4,7 +4,7 @@
 [
 <c:forEach var="user" varStatus="status" items="${userList }">
 		{"id":${user.id},
-		"organization":{"id":${user.organization.id},"name":"${user.organization.name}"},
+		"organization":{"id":"${user.organization.id}","name":"${user.organization.name}"},
 		"username":"${user.username }",
 		"realname":"${user.realname }",
 		"email":"${user.email}",

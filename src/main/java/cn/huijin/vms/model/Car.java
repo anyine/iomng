@@ -50,7 +50,7 @@ public abstract class Car extends IdEntity{
 	@OneToMany(cascade=CascadeType.REMOVE,mappedBy="car")
 	private Set<InnerCarRecord> carRecords=new HashSet<InnerCarRecord>();
 
-	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
+	@OneToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="car_id")
 	private Card card;
 	/**

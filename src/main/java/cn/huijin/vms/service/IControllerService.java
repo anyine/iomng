@@ -17,4 +17,9 @@ import cn.huijin.vms.model.Controller;
 public interface IControllerService {
 	List<Controller> getControllersByDoorId(Long doorId);
 	Controller getOne(Long id);
+	/**
+	 * 列出所有控制器
+	 * @return
+	 */
+	List<Controller> list();
 }

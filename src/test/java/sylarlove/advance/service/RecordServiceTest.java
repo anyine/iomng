@@ -30,15 +30,13 @@ public class RecordServiceTest extends UnitilsJUnit4 {
 
 	@Test
 	public void add() {
-		recordService.add("111111", "2", "000000");
-		ISmsService sms=new SmsService();
-		sms.startService("13010171500", "1234");
+//		recordService.add("111111", "2", "000000");
+//		ISmsService sms=new SmsService("13010171500", "1234");
 	}
 	
 	@Test
 	public void sms() {
-		ISmsService sms=new SmsService();
-		sms.startService("13010171500", "1234");
+		ISmsService sms=new SmsService("13010171500", "1234");
 		sms.sendMessage("15853725352", "短信测试。");
 		System.out.println("Now Sleeping - Hit <enter> to terminate.");
 		try {

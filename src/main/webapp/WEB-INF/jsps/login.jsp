@@ -8,6 +8,7 @@
 <title>登陆</title>
 </head>
 <body>
+${msg }
 <sf:form method="post" modelAttribute="loginCommand">
 	用户名：<sf:input path="username"/><sf:errors path="username"/><br>
 	密码:<sf:password path="password"/><sf:errors path="password"/><br>

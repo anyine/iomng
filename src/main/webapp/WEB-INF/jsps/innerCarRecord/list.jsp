@@ -7,7 +7,7 @@
 	items="${innerCarRecordList }">
 	{"type":"${record.type }",
 	"date":"${record.date}",
-	"car":{"license":"${record.car.license}"},
+	"car":{"license":"${record.car.license}","user":{"realname":"${record.car.user.realname}"}},
 	"status":"${record.status}"
 	}
 	<c:if test="${!status.last }">,</c:if>

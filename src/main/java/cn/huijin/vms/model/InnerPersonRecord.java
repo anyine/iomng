@@ -4,6 +4,7 @@
 package cn.huijin.vms.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -29,7 +30,7 @@ public class InnerPersonRecord extends Record{
 	@ManyToOne
 	@JoinColumn(name="person_id")
 	private Person person;
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="leave_id")
 	private Leave leave;
 	public Person getPerson() {

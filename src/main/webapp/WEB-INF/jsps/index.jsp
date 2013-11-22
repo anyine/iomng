@@ -9,6 +9,7 @@
     -->
     <link rel="stylesheet" type="text/css" href="ext/resources/ext-theme-neptune/ext-theme-neptune-all.css">
     <link rel="stylesheet" type="text/css" href="public/example.css">
+    <link rel="stylesheet" type="text/css" href="ux/css/ItemSelector.css">
     <link rel="stylesheet" type="text/css" href="public/vms.css">
     <script type="text/javascript" src="ext/bootstrap.js"></script>
    	 <!-- <script type="text/javascript" src="ext/ext-all-debug.js"></script> -->

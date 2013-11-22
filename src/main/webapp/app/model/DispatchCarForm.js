@@ -1,0 +1,14 @@
+Ext.define('VMS.model.DispatchCarForm',{
+	extend:'Ext.data.Model',
+	fields:[
+	        {name:'id',type:'int'},
+	        {name:'car.license',type:'varchar'},
+	        {name:'car.user.realname',type:'varchar'},
+	        {name:'user',type:'user'},
+	        {name:'startTime',type:'date'},
+	        {name:'endTime',type:'date'},
+	        {name:'reason',type:'varchar'},
+	        {name:'agree',type:'boolean'}
+	        ],
+	        idProperty:'id'
+});

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.sdhuijin.cn/record/schema/v1" xmlns:tns="http://www.sdhuijin.cn/record/schema/v1"
+	elementFormDefault="qualified">
+	<xs:element name="RecordRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="controllerSn" type="xs:string" />
+				<xs:element name="readerNumber" type="xs:string" />
+				<xs:element name="cardNumber" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RecordResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="command" type="xs:string" />
+				<xs:element name="gateNumber" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Controller">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="sn" type="xs:string" />
+				<xs:element name="ip" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetControllerListRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="anyString" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetControllerListResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="tns:Controller" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -4,6 +4,7 @@ Ext.define('VMS.model.InnerCarRecord',{
 	        {name:'type',type:'varchar'},
 	        {name:'date',type:'date'},
 	        {name:'car.license',type:'varchar'},
+	        {name:'car.user.realname',type:'varchar'},
 	        {name:'status',type:'varchar'}
 	        ]
 });

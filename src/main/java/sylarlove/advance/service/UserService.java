@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.hibernate.service.spi.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Sort;
@@ -18,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import sylarlove.advance.dao.UserDao;
 import sylarlove.advance.exception.ExistedException;
-import sylarlove.advance.exception.ServiceException;
 import sylarlove.advance.model.main.User;
 import sylarlove.advance.realm.ShiroDbRealm;
 
@@ -76,6 +76,10 @@ public class UserService implements IUserService{
 	public void login(String username, String password, Boolean rememberMe) {
 		UsernamePasswordToken token=new UsernamePasswordToken(username, password, rememberMe);
 		SecurityUtils.getSubject().login(token);
+	}
+	@Override
+	public void logout() {
+		SecurityUtils.getSubject().logout();
 	}
 	
 }

@@ -6,12 +6,13 @@
 <c:forEach var="car" varStatus="status" items="${innerCarList }">
 	{"id":${car.id },
 	"license":"${car.license }",
-	"card":{"number":"${car.card.number }"},
+	"card":{"id":"${car.card.id}","number":"${car.card.number }"},
 	"user":{"id":${car.user.id},"realname":"${car.user.realname }"},
 	"type":{"id":${car.type.id},"name":"${car.type.name }"},
 	"organization":{"id":${car.organization.id},"name":"${car.organization.name}"},
 	"status":"${car.status}",
-	"level":"${car.level}"}
+	"level":"${car.level}",
+	"notify":{"id":${car.notify.id},"name":"${car.notify.name}"}}
 	<c:if test="${!status.last }">,</c:if>
 </c:forEach>
 ]

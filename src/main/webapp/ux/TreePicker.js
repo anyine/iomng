@@ -79,6 +79,7 @@ Ext.define('Ext.ux.TreePicker', {
     createPicker: function() {
         var me = this,
             picker = new Ext.tree.Panel({
+            	rootVisible : false,
                 shrinkWrapDock: 2,
                 store: me.store,
                 floating: true,
@@ -185,7 +186,7 @@ Ext.define('Ext.ux.TreePicker', {
         me.setValue(record.getId());
         me.picker.hide();
         me.inputEl.focus();
-        me.fireEvent('select', me, record)
+        me.fireEvent('select', me, record);
 
     },
 

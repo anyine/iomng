@@ -19,4 +19,10 @@ public interface UserDao extends JpaRepository<User, Long>{
 	 * @return
 	 */
 	User findByUsername(String username);
+	/**
+	 * 通过绑定的手机号码查询用户
+	 * @param phoneNumber
+	 * @return
+	 */
+	User findByPhone(String phoneNumber);
 }

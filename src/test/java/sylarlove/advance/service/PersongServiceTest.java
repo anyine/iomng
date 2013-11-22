@@ -12,6 +12,7 @@ import org.unitils.spring.annotation.SpringBeanByType;
 
 import sylarlove.advance.dao.OrganizationDao;
 import sylarlove.advance.model.main.Organization;
+import sylarlove.advance.model.main.User;
 import cn.huijin.vms.model.Card;
 import cn.huijin.vms.model.InnerPerson;
 import cn.huijin.vms.service.IInnerPersonService;
@@ -35,17 +36,22 @@ public class PersongServiceTest extends UnitilsJUnit4{
 		
 		InnerPerson p=new InnerPerson();
 		Card card=new Card();
-		card.setNumber("999999");
+		card.setNumber("888888");
 		p.setCard(card);
 		
 		p.setCertificate("3715211990090909090");
-		p.setName("测试");
+		p.setName("测试1");
 		
 		Organization organization=organizationDao.findOne(32769L);
 		p.setOrganization(organization);
 		
 		p.setSex("man");
-		
+		User u1=new User();
+		u1.setId(1L);
+		User u2=new User();
+		u2.setId(131072L);
+		p.getUsers().add(u2);
+		p.getUsers().add(u1);
 		innerPersonServcie.add(p);
 	}
 

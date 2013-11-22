@@ -35,4 +35,9 @@ public class ControllerService implements IControllerService{
 		return controllerDao.findOne(id);
 	}
 
+	@Override
+	public List<Controller> list() {
+		return controllerDao.findAll();
+	}
+
 }

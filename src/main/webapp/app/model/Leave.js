@@ -1,0 +1,12 @@
+Ext.define('VMS.model.Leave',{
+	extend:'Ext.data.Model',
+	fields:[
+	        {name:'id',type:'int'},
+	        {name:'person.name',type:'varchar'},
+	        {name:'startTime',type:'date'},
+	        {name:'endTime',type:'date'},
+	        {name:'reason',type:'varchar'},
+	        {name:'agree',type:'boolean'}
+	        ],
+	        idProperty:'id'
+});

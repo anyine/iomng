@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.validation.Valid;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -21,6 +22,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import sylarlove.advance.exception.ExistedException;
 import sylarlove.advance.exception.ServiceException;
+import sylarlove.advance.model.main.User;
+import sylarlove.advance.service.IUserService;
 import cn.huijin.vms.model.InnerPerson;
 import cn.huijin.vms.service.IInnerPersonService;
 
@@ -35,6 +38,8 @@ import cn.huijin.vms.service.IInnerPersonService;
 public class InnerPersonController {
 	@Inject
 	private IInnerPersonService innerPersonService;
+	@Inject
+	private IUserService userService;
 	
 	private final String LIST="innerPerson/list";
 	
@@ -51,7 +56,7 @@ public class InnerPersonController {
 	}
 	@RequestMapping(value="/update",method=RequestMethod.POST)
 	@ResponseBody
-	public Map<String,Object> update( @Valid InnerPerson innerPerson,Errors errors){
+	public Map<String,Object> update( @Valid InnerPerson innerPerson,Errors errors,String userIds){
 		Map<String,Object> result=new HashMap<String, Object>();
 		if(errors.hasErrors()){
 			result.put("success", false);
@@ -59,6 +64,14 @@ public class InnerPersonController {
 			return result;
 		}
 			try {
+				if(StringUtils.isNotBlank(userIds)){
+					for(String userId: userIds.split(",")){
+						User user=userService.getOne(Long.valueOf(userId));
+						if(user!=null){
+							innerPerson.getUsers().add(user);
+						}
+					}
+				}
 				innerPersonService.update(innerPerson);
 				result.put("success", true);
 			} catch (Exception e) {
@@ -70,7 +83,7 @@ public class InnerPersonController {
 	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
 	@ResponseBody
-	public  Map<String,Object> add(@ModelAttribute @Valid InnerPerson innerPerson,Errors errors){
+	public  Map<String,Object> add(@ModelAttribute @Valid InnerPerson innerPerson,Errors errors,String userIds){
 		Map<String,Object> result=new HashMap<String, Object>();
 		if(errors.hasErrors()){
 			result.put("success", false);
@@ -78,6 +91,14 @@ public class InnerPersonController {
 			return result;
 		}
 		try {
+			if(StringUtils.isNotBlank(userIds)){
+				for(String userId: userIds.split(",")){
+					User user=userService.getOne(Long.valueOf(userId));
+					if(user!=null){
+						innerPerson.getUsers().add(user);
+					}
+				}
+			}
 			innerPersonService.add(innerPerson);
 			result.put("success", true);
 		} catch (ExistedException e) {

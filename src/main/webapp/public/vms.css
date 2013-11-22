@@ -1,3 +1,10 @@
+.x-logo {
+	background-image: url("images/topBg.png");
+	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #4e691f;
+}
+
 .in-row .x-grid-cell {
 	background-color: #FFFFDD;
 }
@@ -5,6 +12,27 @@
 .out-row .x-grid-cell {
 	background-color: #CED9E7;
 }
+
 .waring-row .x-grid-cell {
 	background-color: #FF6A6A;
+}
+
+.agree-row .x-grid-cell {
+	background-color: #7FFFD4;
+}
+
+.noagree-row .x-grid-cell {
+	background-color: #FF7F50;
+}
+
+.x-logout-button {
+	background-image: url('images/logoutBtn.png') !important;
+}
+.x-mycontent{
+	background: url('images/main.png') no-repeat !important;
+}
+.x-footer {
+	text-align: center;
+	font-size: 13px;
+	padding-left: 20px;
 }

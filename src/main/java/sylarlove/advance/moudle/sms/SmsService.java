@@ -11,25 +11,23 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.smslib.Message.MessageEncodings;
-import org.smslib.Message.MessageTypes;
 import org.smslib.AGateway;
 import org.smslib.IInboundMessageNotification;
 import org.smslib.IOutboundMessageNotification;
 import org.smslib.InboundMessage;
+import org.smslib.Message.MessageEncodings;
+import org.smslib.Message.MessageTypes;
 import org.smslib.OutboundMessage;
 import org.smslib.Service;
 import org.smslib.helper.CommPortIdentifier;
 import org.smslib.helper.SerialPort;
 import org.smslib.modem.SerialModemGateway;
-import org.springframework.stereotype.Component;
 
 /**
  * @author 武继明
  * @since 2013年10月31日 下午2:58:52
  * 
  */
-@Component
 public class SmsService implements ISmsService {
 	static final Logger logger = LoggerFactory.getLogger(SmsService.class);
 	private List<IReciveCallBack> reciveCallBacks=new ArrayList<IReciveCallBack>();
@@ -55,8 +53,7 @@ public class SmsService implements ISmsService {
 		}
 	}
 
-	@Override
-	public void startService(String smscNumber, String simPin) {
+	public SmsService(String smscNumber, String simPin) {
 		if(this.isStarted()){//如果启动了则不在启动
 			return;
 		}
@@ -223,4 +220,21 @@ public class SmsService implements ISmsService {
 			e.printStackTrace();
 		}
 	}
+
+	public List<IReciveCallBack> getReciveCallBacks() {
+		return reciveCallBacks;
+	}
+
+	public void setReciveCallBacks(List<IReciveCallBack> reciveCallBacks) {
+		this.reciveCallBacks = reciveCallBacks;
+	}
+
+	public List<ISendCallBack> getSendCallBacks() {
+		return sendCallBacks;
+	}
+
+	public void setSendCallBacks(List<ISendCallBack> sendCallBacks) {
+		this.sendCallBacks = sendCallBacks;
+	}
+	
 }

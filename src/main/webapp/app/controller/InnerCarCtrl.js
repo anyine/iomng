@@ -60,7 +60,8 @@ Ext.define('VMS.controller.InnerCarCtrl', {
 				url : 'innerCar/update',
 				method : 'post',
 				params : {
-					id : record.getId()
+					id : record.getId(),
+					'card.id':record.get('card.id')
 				},
 				success : function(form, action) {
 					Ext.example.msg('提示', '更新成功。');

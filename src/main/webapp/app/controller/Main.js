@@ -11,10 +11,16 @@ Ext.define('VMS.controller.Main', {
     init:function(){
     	this.control({
 	    	'#treemenu':{
-	    		'select': this.changePage,
+	    		'select': this.changePage
+	    	},
+	    	'viewport grid':{
+	    		'show':this.onGridShow
 	    	}
     	});
     },
+    onGridShow:function(me,eo){
+		me.getStore().load();
+	}   ,
     //点击树形节点  切换页面
     changePage:function(me,rec,index,e){
     //如果点击的节点为非叶子节点，则不作任何操作

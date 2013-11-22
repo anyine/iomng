@@ -1,8 +1,7 @@
 Ext.define('VMS.store.DoorStore', {
 	extend : 'Ext.data.Store',
 	model : 'VMS.model.Door',
-	autoLoad : true,
-
+	//autoLoad : true,
 	proxy : {
 		type : 'ajax',
 		api : {

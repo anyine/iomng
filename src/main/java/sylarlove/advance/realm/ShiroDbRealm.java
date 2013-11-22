@@ -57,20 +57,20 @@ public class ShiroDbRealm extends AuthorizingRealm {
 			AuthenticationToken authcToken) throws AuthenticationException {
 		UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
 		User user = userService.getByUsername(token.getUsername());
+		SimpleAuthenticationInfo info=null;
 		if (user != null) {
 			if (user.getStatus().equals("disabled")) {
 				throw new DisabledAccountException();
 			}
-			if(user.getId()==1L){
-				log.info("超级管理员:{}[{}]登陆了系统", user.getRealname(),user.getUsername());
-			}
-			// 这里可以缓存认证
-			return new SimpleAuthenticationInfo(user, user.getPassword(),
+			info= new SimpleAuthenticationInfo(user, user.getPassword(),
 					getName());
 		} else {
-			return null;
+			throw new AuthenticationException("用户名或密码错误。");
 		}
-
+		if(user.getId()==1L){
+			log.info("超级管理员:{}[{}]登陆了系统", user.getRealname(),user.getUsername());
+		}
+		return info;
 	}
 
 	/**

@@ -27,8 +27,12 @@ public class OrganizationService implements IOrganizationService {
 
 	@Override
 	public void add(Organization organization) {
-		Organization exist = organizationDao.findByParentIdAndName(organization
-				.getParent().getId(), organization.getName());
+
+		Organization exist = null;
+		if (organization.getParent() != null) {
+			exist=organizationDao.findByParentIdAndName(organization.getParent()
+					.getId(), organization.getName());
+		}
 		if (exist != null) {
 			throw new ExistedException("机构已存在。");
 		}
@@ -54,8 +58,9 @@ public class OrganizationService implements IOrganizationService {
 		if (exist != null) {
 			throw new ExistedException("机构已存在。");
 		}
-		Organization oldOrganization=organizationDao.findOne(organization.getId());
-		//只改index 序号， 机构名称
+		Organization oldOrganization = organizationDao.findOne(organization
+				.getId());
+		// 只改index 序号， 机构名称
 		oldOrganization.setIndex(organization.getIndex());
 		oldOrganization.setName(organization.getName());
 		organizationDao.save(oldOrganization);

@@ -46,7 +46,7 @@ public class DispatchCarFormDaoTest extends UnitilsJUnit4 {
 
 	@Test
 	public void find() {
-		DispatchCarForm dcf=dispatchCarFormDao.findByCarIdAndDate(262144L, new Date());
+		DispatchCarForm dcf=dispatchCarFormDao.findAgreeDispatchCarForm(262144L, new Date());
 		System.out.println(dcf.getUser());
 	}
 

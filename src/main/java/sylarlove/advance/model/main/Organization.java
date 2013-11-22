@@ -29,7 +29,7 @@ import sylarlove.advance.model.IdEntity;
  *
  */
 @Entity
-@Table(name="sa_t_organiation")
+@Table(name="sa_t_organization")
 public class Organization extends IdEntity{
 
 	/**

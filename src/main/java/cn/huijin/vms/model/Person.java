@@ -19,6 +19,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -56,6 +57,15 @@ public abstract class Person extends IdEntity{
 	private Date createTime=new Date();
 	@OneToMany(cascade=CascadeType.REMOVE,mappedBy="person")
 	private Set<InnerPersonRecord> personRecords=new HashSet<InnerPersonRecord>();
+	@Pattern(regexp="^1[3,5,8][0-9]\\d{8}$",message="手机号码格式不正确")
+	private String phone;
+	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getName() {
 		return name;
 	}

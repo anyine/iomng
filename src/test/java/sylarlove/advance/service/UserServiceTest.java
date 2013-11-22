@@ -35,8 +35,6 @@ public class UserServiceTest extends UnitilsJUnit4{
 		user.setPhone("15288843691");
 		user.setRealname("武继明");
 		userService.add(user);
-		
-		
 	}
 
 	@Test

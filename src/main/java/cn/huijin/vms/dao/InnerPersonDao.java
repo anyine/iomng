@@ -38,4 +38,10 @@ public interface InnerPersonDao extends JpaRepository<InnerPerson, Long>{
 	 * @return
 	 */
 	InnerPerson findByCertificateAndIdNot(String certificate, Long id);
+	/**
+	 * 通过绑定手机查询人员信息
+	 * @param phone
+	 * @return
+	 */
+	InnerPerson findByPhone(String phone);
 }

@@ -5,6 +5,8 @@ package sylarlove.advance.service;
 
 import java.util.List;
 
+import org.apache.shiro.authc.AuthenticationException;
+
 import sylarlove.advance.exception.ExistedException;
 import sylarlove.advance.exception.ServiceException;
 import sylarlove.advance.model.main.User;
@@ -48,6 +50,15 @@ public interface IUserService {
 	 * @return
 	 */
 	User getByUsername(String username);
-	
-	void login(String username,String password,Boolean rememberMe);
+	/**
+	 * 登录
+	 * @param username
+	 * @param password
+	 * @param rememberMe
+	 */
+	void login(String username,String password,Boolean rememberMe)throws AuthenticationException;
+	/**
+	 * 退出登录
+	 */
+	void logout();
 }

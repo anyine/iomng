@@ -10,11 +10,11 @@
 .x-toolbar-sencha .x-logo {
   padding: 10px 10px 10px 31px;
   color: #fff;
+  background-image: url("public/images/topBg.png");
   font-size: 18px;
   font-weight: bold;
   text-shadow: 0 1px 0 #4e691f;
 }
-
 .x-logo span{
   font-size: 12px;
   font-weight: normal;

@@ -8,6 +8,6 @@ Ext.define('VMS.view.Content', {
 	},
 	items : [ {
 		title:'首页',
-		html:'首页'
+		bodyCls:'x-mycontent'
 	} ]
 });

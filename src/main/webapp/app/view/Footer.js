@@ -6,6 +6,7 @@ Ext.define('VMS.view.Footer', {
     items: [
         {
             xtype: 'component',
+            flex:1,
             cls  : 'x-footer',
             html : 'Copyright © 2013 <a href="http://www.sdhuijin.cn" target="_blank">山东汇金信息科技有限公司</a>'
         }

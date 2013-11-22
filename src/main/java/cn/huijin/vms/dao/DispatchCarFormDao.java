@@ -17,6 +17,6 @@ import cn.huijin.vms.model.DispatchCarForm;
  *
  */
 public interface DispatchCarFormDao extends JpaRepository<DispatchCarForm,Long>{
-	@Query("select d from DispatchCarForm d where d.car.id=?1 and ?2 between d.startTime and d.endTime")
-	DispatchCarForm findByCarIdAndDate(Long carId,Date date);
+	@Query("select d from DispatchCarForm d where d.car.id=?1 and ?2 between d.startTime and d.endTime and d.agree=true")
+	DispatchCarForm findAgreeDispatchCarForm(Long carId,Date date);
 }

@@ -16,6 +16,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import sylarlove.advance.model.IdEntity;
 
@@ -33,19 +37,26 @@ public class Leave extends IdEntity{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	@NotNull(message="必须填写请假人。")
 	@ManyToOne
 	@JoinColumn(name="person_id")
 	private InnerPerson person;//请假人
 	
+	@NotEmpty(message="必须填写事由")
 	private String reason;//事由
 	
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="start_time")
-	private Date startTime;
-	
+	private Date startTime=new Date();;
+
+	@NotNull(message="必须填写归队时间。")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="end_time")
 	private Date endTime;
+	
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_time")

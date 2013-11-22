@@ -7,6 +7,12 @@ Ext.define('VMS.model.InnerPerson', {
 		name : 'name',
 		type : 'varchar'
 	}, {
+		name : 'phone',
+		type : 'varchar'
+	}, {
+		name : 'card.id',
+		type : 'int'
+	}, {
 		name : 'card.number',
 		type : 'varchar'
 	}, {
@@ -18,7 +24,15 @@ Ext.define('VMS.model.InnerPerson', {
 	}, {
 		name : 'certificate',
 		type : 'varchar'
+	}, {
+		name : 'userIds'
+	}, {
+		name : 'notify.id',
+		type : 'int'
+	}, {
+		name : 'notify.name',
+		type : 'varchar'
 	} ],
-	idProperty : 'id',
+	idProperty : 'id'
 
 });

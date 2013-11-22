@@ -13,10 +13,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import cn.huijin.vms.webservice.RecordServiceEndpoint;
 import sylarlove.advance.model.IdEntity;
 
 /**
@@ -25,6 +29,7 @@ import sylarlove.advance.model.IdEntity;
  *  @since 2013年10月16日  上午10:46:53
  *
  */
+@XmlAccessorType(XmlAccessType.NONE)
 @Entity
 @Table(name="t_controller")
 public class Controller extends IdEntity{
@@ -33,12 +38,14 @@ public class Controller extends IdEntity{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@XmlElement(namespace=RecordServiceEndpoint.NAME_SPACE)
 	@NotEmpty(message="sn不能为空。")
 	@Length(max=32,message="sn长度最大为{max}")
 	@Column(length=32,unique=true)
 	private String sn;
 	
 	//TODO ip地址验证
+	@XmlElement(namespace=RecordServiceEndpoint.NAME_SPACE)
 	@NotEmpty(message="ip地址不能为空。")
 	@Column(unique=true)
 	private String ip;
@@ -74,6 +81,11 @@ public class Controller extends IdEntity{
 	}
 	public void setDoor(Door door) {
 		this.door = door;
+	}
+	@Override
+	@XmlElement(namespace=RecordServiceEndpoint.NAME_SPACE)
+	public Long getId() {
+		return super.getId();
 	}
 	
 }

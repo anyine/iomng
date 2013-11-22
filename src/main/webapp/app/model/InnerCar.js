@@ -1,8 +1,9 @@
 Ext.define('VMS.model.InnerCar',{
 	extend:'Ext.data.Model',
 	fields:[
-	        {name:'id',type:'long'},
+	        {name:'id',type:'int'},
 	        {name:'license',type:'varchar'},
+	        {name:'card.id',type:'int'},
 	        {name:'card.number',type:'varchar'},
 	        {name:'user.id',type:'varchar'},
 	        {name:'user.realname',type:'varchar'},
@@ -11,8 +12,10 @@ Ext.define('VMS.model.InnerCar',{
 	        {name:'type.id',type:'varchar'},
 	        {name:'type.name',type:'varchar'},
 	        {name:'level',type:'varchar'},
-	        {name:'status',type:'varchar'}
+	        {name:'status',type:'varchar'},
+	        {name:'notify.id',type:'int'},
+	        {name:'notify.name',type:'varchar'}
 	        ],
-	        idProperty:'id',
+	        idProperty:'id'
 	        
 });

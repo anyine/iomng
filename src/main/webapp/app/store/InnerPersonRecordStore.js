@@ -1,7 +1,7 @@
 Ext.define('VMS.store.InnerPersonRecordStore', {
 	extend : 'Ext.data.Store',
 	model : 'VMS.model.InnerPersonRecord',
-	autoLoad : true,
+	//autoLoad : true,
 	storeId : 'innerCarRecordStore',
 	sorters : [ {
 		property : 'date',

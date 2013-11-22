@@ -19,6 +19,9 @@ Ext.define('VMS.view.innerPerson.List', {
 		text : '证件号',
 		dataIndex : 'certificate'
 	}, {
+		text : '手机',
+		dataIndex : 'phone'
+	}, {
 		text : '所属机构',
 		dataIndex : 'organization.name'
 	},{

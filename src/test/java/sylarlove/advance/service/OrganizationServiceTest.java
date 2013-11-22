@@ -25,12 +25,17 @@ public class OrganizationServiceTest extends UnitilsJUnit4{
 	
 	@Test
 	public void add(){
-		Organization parent=new Organization();
+	
 		Organization root=new Organization();
 		root.setId(0L);
+		root.setName("根机构");
+		root.setIndex(0);
+	//	organizationServcie.add(root);
+		Organization parent=new Organization();
 		parent.setParent(root);
 		parent.setIndex(1);
 		parent.setName("济宁公安消防支队");
+		
 		organizationServcie.add(parent);
 		
 		Organization c1=new Organization();

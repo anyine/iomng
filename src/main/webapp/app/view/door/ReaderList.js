@@ -48,7 +48,7 @@ Ext.define('VMS.view.door.ReaderList',	{
 										}),
 									    queryMode: 'local',
 									    displayField: 'name',
-									    valueField: 'id',
+									    valueField: 'id'
 								},
 								renderer:function(v){
 									if('IN'==v){

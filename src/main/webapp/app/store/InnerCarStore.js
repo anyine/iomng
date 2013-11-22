@@ -1,7 +1,7 @@
 Ext.define('VMS.store.InnerCarStore', {
     extend: 'Ext.data.Store',
     model:'VMS.model.InnerCar',
-    autoLoad:true,
+ //   autoLoad:true,
     proxy:{
     	type:'ajax',
     	api:{

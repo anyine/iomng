@@ -5,10 +5,10 @@ package cn.huijin.vms.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
@@ -40,7 +40,7 @@ public abstract class Record extends IdEntity{
 	private Date date=new Date();
 	
 	@NotNull(message="出入记录门信息不可为空")
-	@ManyToOne(cascade={CascadeType.REMOVE})
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="door_id")
 	private Door door;
 

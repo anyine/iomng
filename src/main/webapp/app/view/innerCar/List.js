@@ -13,6 +13,9 @@ Ext.define('VMS.view.innerCar.List', {
 		text : '号牌',
 		dataIndex : 'license'
 	}, {
+		text : '负责人',
+		dataIndex : 'user.realname'
+	}, {
 		text : '卡号',
 		dataIndex : 'card.number'
 	}, {
@@ -21,17 +24,14 @@ Ext.define('VMS.view.innerCar.List', {
 	}, {
 		text : '所属机构',
 		dataIndex : 'organization.name'
-	}, {
-		text : '负责人',
-		dataIndex : 'user.realname'
 	},{
 		text : '通行级别',
 		dataIndex : 'level',
 		renderer:function(val){
 			if(val=='request'){
-				return '请求通行';
+				return '干部私家车';
 			}else if(val=='direct'){
-				return '<span style="color:#73b51e;">直接通行</span>';
+				return '<span style="color:#73b51e;">内部管理车</span>';
 			}else{
 				return val;
 			}

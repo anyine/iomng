@@ -1,22 +1,23 @@
 Ext.define('VMS.view.innerPerson.Edit', {
 	extend : 'Ext.window.Window',
-	requires : [ 'VMS.store.OrganizationStore', 'Ext.ux.TreePicker' ],
+	requires : [ 'VMS.store.OrganizationStore', 'Ext.ux.TreePicker',
+			'Ext.ux.form.ItemSelector' ],
 	xtype : 'innerpersonedit',
 	resizable : false,
 	modal : true,
-	height : 250,
+	height : 450,
 	width : 400,
 	buttonAlign : 'center',
 	title : '人员',
-	
+
 	items : [ {
 		xtype : 'form',
 		border : false,
-		bodyPadding:20,
+		bodyPadding : 10,
 		fieldDefaults : {
-			labelWidth : 60,
+			labelWidth : 70,
 			labelAlign : 'right',
-			width : 300
+			width : 350
 		},
 		items : [ {
 			xtype : 'treepicker',
@@ -43,10 +44,45 @@ Ext.define('VMS.view.innerPerson.Edit', {
 			emptyText : '填写门禁卡号。'
 		}, {
 			xtype : 'textfield',
+			fieldLabel : '手机号',
+			name : 'phone',
+			 regex: /^\d{11}$/,
+             regexText: '必须为11位手机号。',
+			emptyText : '填写要绑定的手机号。'
+		}, {
+			xtype : 'textfield',
 			allowBlank : false,
 			fieldLabel : '姓名',
 			name : 'name',
 			emptyText : '填写姓名。'
+		}, {
+			xtype : 'combo',
+			allowBlank : false,
+			fieldLabel : '短信通知时间',
+			store : 'NotifyStore',
+			editable : false,
+			name : 'notify.id',
+			valueField : 'id',
+			displayField : 'name',
+			emptyText : '选择短信通知策略类型。'
+		}, {
+			xtype : 'itemselector',
+			name : 'userIds',
+			anchor : '100%',
+			fieldLabel : '请假负责人',
+			height : 200,
+			buttons : [ 'add', 'remove' ],
+			buttonsText : {
+				add : '添加到选中',
+				remove : '移除'
+			},
+			imagePath: 'ux/css/images/',
+			store : 'UserStore',
+			displayField : 'realname',
+			valueField : 'id',
+			msgTarget : 'side',
+			fromTitle : '选择',
+			toTitle : '选中'
 		} ]
 	} ],
 	buttons : [ {

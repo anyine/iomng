@@ -15,13 +15,7 @@ public interface ISmsService {
 	 * @return
 	 */
 	public boolean isStarted();
-	/**
-	 * 启动服务
-	 * @param smscNumber 短信中心号码
-	 * @param simPin 手机卡pin
-	 * @return
-	 */
-	public void startService(String smscNumber,String simPin);
+	
 	/**
 	 * 关闭服务
 	 */

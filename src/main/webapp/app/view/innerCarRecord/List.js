@@ -37,6 +37,9 @@ Ext.define('VMS.view.innerCarRecord.List', {
 		text : '车辆',
 		dataIndex : 'car.license'
 	}, {
+		text : '车辆负责人',
+		dataIndex : 'car.user.realname'
+	}, {
 		text : '时间',
 		dataIndex : 'date',
 		width : 200,
