@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+padding:0px;
+height:100%;
+overflow:hidden;
+font-size:12px;
+background-image:url(images/bg.png);
+background-repeat:no-repeat;
+}
+
+#container{
+height:450px;
+width:880px;
+background:url(images/divPhoto.png) no-repeat;
+position:absolute;
+}
+
+#loginForm {
+position:relative;
+margin-top:110px;
+margin-left:425px;
+}
+
+#userName{
+margin-bottom:12px;
+}
+
+#userName font{
+margin-right:8px;
+color:#3399CC;
+}
+
+#userName input{
+height:22px;
+width:150px;
+border-color:#0099CC;
+border-top-left-radius: 5px; 
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px; 
+}
+
+#password {
+	margin-bottom:10px;
+}
+
+#password font{
+margin-right:8px;
+color:#3399CC;
+}
+
+/*form表单中输入区层的:与其前边内容的间距*/
+	span.bank13{
+		 padding-left:13px;
+	}
+	
+#password input{
+height:22px;
+width:150px;
+border-color:#0099CC;
+border-top-left-radius: 5px; 
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+ border-bottom-left-radius: 5px; 
+}
+
+#checkboxlgBtn{
+margin-top:20px; 
+margin-left:52px;
+}
+
+#remerber input{
+margin-right:7px;
+cursor:pointer;
+}
+
+#remerber font{
+color:#0099CC;
+ margin-left:4px;
+}
+
+#loginBtn{
+background-image:url(images/lgBtn.png);
+height:22px;
+width:58px;
+margin-top:19px;
+margin-left:3px;
+cursor:pointer;
+}
+
+.msg{
+	font-weight:bold;
+color:red;
+}

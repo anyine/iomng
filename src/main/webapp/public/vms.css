@@ -28,11 +28,33 @@
 .x-logout-button {
 	background-image: url('images/logoutBtn.png') !important;
 }
-.x-mycontent{
+
+.x-mycontent {
 	background: url('images/main.png') no-repeat !important;
 }
+
 .x-footer {
 	text-align: center;
 	font-size: 13px;
 	padding-left: 20px;
+}
+
+#loading {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 20000;
+	width: 100%;
+	height: 100%;
+	background-color: #66B3FF;
+	text-align: center;
+	font-size: 36;
+}
+
+#loading img {
+	position: relative;
+	top:40%;
+    width : 150;
+	height: auto;
+	width: 150;
 }

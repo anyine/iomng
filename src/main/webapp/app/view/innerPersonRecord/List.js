@@ -54,6 +54,47 @@ Ext.define('VMS.view.innerPersonRecord.List', {
 				return v;
 			}
 		}
-
-	} ]
+	} ],
+	tbar : [{
+		xtype : 'form',
+		border : false,
+		layout: 'hbox',
+		defaults : {
+			labelWidth : 60
+		},
+		items : [{
+			xtype : 'combo',
+			store :'InnerPersonRecordStore',
+			displayField : 'person.name',
+			fieldLabel :'人员',
+			queryMode: 'local',
+			enableRegEx : true,
+			hideTrigger : true,
+			typeAhead : true,
+			minChars : 3
+		},{
+			xtype:'datetimefield',
+            fieldLabel: '起止时间',
+            name: 'startdt',
+            itemId: 'startdt',
+//            vtype: 'daterange',
+            endDateField: 'enddt' 
+        }, {
+        	xtype:'datetimefield',
+            fieldLabel: '截止时间',
+            name: 'enddt',
+            itemId: 'enddt',
+//            vtype: 'daterange',
+            startDateField: 'startdt' 
+        }]
+	},{
+		text:'重置',
+		action:'reset'
+	}]/*,
+		dockedItems: [{
+        xtype: 'pagingtoolbar',
+        store: 'InnerPersonRecordStore',  
+        dock: 'bottom',
+        displayInfo: true
+    }]*/
 });

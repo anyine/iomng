@@ -15,9 +15,9 @@
 		<constructor-arg index="1" value="1234"/> -->
 		<property name="reciveCallBacks">
 			<list>
-				<bean class="cn.huijin.vms.service.sms.ReciveLeaveCallBack"/>
 				<bean class="cn.huijin.vms.service.sms.ReciveApproveCallBack"/>
 				<bean class="cn.huijin.vms.service.sms.ReciveRecordCallBack"/>
+				<bean class="cn.huijin.vms.service.sms.ReciveLeaveCallBack"/>
 			</list>
 		</property>
 	</bean>

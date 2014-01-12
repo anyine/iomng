@@ -108,4 +108,11 @@ public class PageContext {
 	public static void removeSort() {
 		PageContext.sort.remove();
 	}
+	public static void removeAll(){
+		removeCurrentPage();
+		removeOrder();
+		removePageOffset();
+		removePageSize();
+		removeSort();
+	}
 }

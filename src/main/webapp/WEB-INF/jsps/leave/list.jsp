@@ -8,6 +8,7 @@
 				,"person":{"id":${leave.person.id},"name":"${leave.person.name}"}
 				,"reason":"${leave.reason}"
 				,"agree":${leave.agree}
+				,"createTime":"${leave.createTime}"
 				}<c:if test="${!status.last }">,</c:if>
 		</c:forEach>
 	]

@@ -20,6 +20,7 @@
 		<property name="successUrl" value="/index" />
 		<property name="filterChainDefinitions">
 			<value>
+				/public/** = anon
 				/ws/** = anon
 				/logout = logout
 		    	/** = user

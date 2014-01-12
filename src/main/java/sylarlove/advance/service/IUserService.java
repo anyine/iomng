@@ -61,4 +61,5 @@ public interface IUserService {
 	 * 退出登录
 	 */
 	void logout();
+	void changePassword(String oldPassword, String newPassword);
 }

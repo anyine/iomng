@@ -1,32 +1,61 @@
 Ext.define('VMS.controller.LeaveCtrl', {
 	extend : 'Ext.app.Controller',
-	views : [ 'leave.List', 'leave.Edit' ],
-	stores : [ 'LeaveStore' ],
-	models : [ 'Leave' ],
+	views : ['leave.List', 'leave.Edit'],
+	stores : ['LeaveStore'],
+	models : ['Leave'],
 
 	init : function() {
 		// console.log('leave controller init...');
-		
+
 		this.control({
-			'leavelist button[action=add]' : {
-				click : this.onAdd
-			},
-			'leaveedit button[action=save]' : {
-				click : this.onSave
-			},
-			'leavelist' : {
-				itemdblclick : this.onItemdblclick,
-				itemagreeclick:this.onAgree,
-				itemnoagreeclick:this.onNoAgree
-			}
-		});
+					'leavelist button[action=add]' : {
+						click : this.onAdd
+					},
+					'leaveedit button[action=save]' : {
+						click : this.onSave
+					},
+					'leavelist' : {
+						itemdblclick : this.onItemdblclick,
+						itemagreeclick : this.onChangeAgree,
+						itemnoagreeclick : this.onChangeAgree
+					},
+					'leavelist form datetimefield' : {
+						change : this.onTimeFieldChange
+					},
+					'leavelist toolbar button[action=reset]' : {
+						click : this.onRestClick
+					}
+				});
 	},
-	onAgree:function(view, rowIndex, colIndexitem, item,e, record){
-		console.log(record.getId()+"agree ");
-		
-	},
-	onNoAgree:function(view, rowIndex, colIndexitem, item,e, record){
-		console.log(record.getId()+"no agree");
+	onTimeFieldChange : function(me, newValue, oldValue, eOpts) {
+				var store = this.getLeaveStoreStore();
+				store.clearFilter(true);
+				store.filter({
+							filterFn : function(item) {
+								if ('startdt' == me.getName()) {
+									return item.get("createTime") >= newValue;
+								} else if ('enddt' == me.getName()) {
+									return item.get("createTime") <= newValue;
+								}
+							}
+						});
+			},
+			onRestClick : function(me) {
+				me.up('grid').down('form').getForm().reset();
+			},
+	onChangeAgree : function(view, rowIndex, colIndexitem, item, e, record) {
+		var store = this.getLeaveStoreStore();
+		Ext.Ajax.request({
+					url : 'leave/changeAgree',
+					method : 'post',
+					params : {
+						id : record.getId()
+					},
+					success : function(response) {
+						store.reload();
+					}
+				});
+
 	},
 	onAdd : function(me, e, eo) {
 		// console.log('leave add');
@@ -49,19 +78,19 @@ Ext.define('VMS.controller.LeaveCtrl', {
 				fn : function(button, text, opt) {
 					if ('yes' == button) {
 						form.submit({
-							method : "post",
-							url : 'leave/add',
-							success : function(form, action) {
-								Ext.example.msg('提示', '提交成功。');
-								store.reload();
-								win.close();
-							},
-							failure : function(form, action) {
-								var result = Ext.JSON
-										.decode(action.response.responseText);
-								Ext.Msg.alert('提示', result.message);
-							}
-						});
+									method : "post",
+									url : 'leave/add',
+									success : function(form, action) {
+										Ext.example.msg('提示', '提交成功。');
+										store.reload();
+										win.close();
+									},
+									failure : function(form, action) {
+										var result = Ext.JSON
+												.decode(action.response.responseText);
+										Ext.Msg.alert('提示', result.message);
+									}
+								});
 					}
 				}
 			});

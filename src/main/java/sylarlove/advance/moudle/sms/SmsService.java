@@ -30,8 +30,8 @@ import org.smslib.modem.SerialModemGateway;
  */
 public class SmsService implements ISmsService {
 	static final Logger logger = LoggerFactory.getLogger(SmsService.class);
-	private List<IReciveCallBack> reciveCallBacks=new ArrayList<IReciveCallBack>();
-	private List<ISendCallBack> sendCallBacks=new ArrayList<ISendCallBack>();
+	private List<IReciveCallBack> reciveCallBacks = new ArrayList<IReciveCallBack>();
+	private List<ISendCallBack> sendCallBacks = new ArrayList<ISendCallBack>();
 	private SerialModemGateway gateway;
 	static boolean started = false;
 
@@ -54,42 +54,66 @@ public class SmsService implements ISmsService {
 	}
 
 	public SmsService(String smscNumber, String simPin) {
-		if(this.isStarted()){//如果启动了则不在启动
+		if (this.isStarted()) {// 如果启动了则不在启动
 			return;
 		}
 		ComAndBaud cab = this.getCom();
+		// ComAndBaud cab=new ComAndBaud("COM4", 19200);
 		if (cab == null) {
 			logger.info("没有找到短信猫设备");
 			return;
 		}
 		gateway = new SerialModemGateway("短信猫", cab.getCom(), cab.getBaud(),
 				"Huawei", "");
-		 gateway.setInbound(true);
-		 gateway.setOutbound(true);
+		gateway.setInbound(true);
+		gateway.setOutbound(true);
 		gateway.setSimPin(simPin);
 		gateway.setSmscNumber("+86" + smscNumber);
-		Service.getInstance().setInboundMessageNotification(new IInboundMessageNotification() {
-			//接收信息回调
-			@Override
-			public void process(AGateway gateway, MessageTypes messageTypes, InboundMessage message) {
-				if(!reciveCallBacks.isEmpty()){
-					for(IReciveCallBack callBack: reciveCallBacks){
-						callBack.process(message.getOriginator(), message.getText());
+		Service.getInstance().setInboundMessageNotification(
+				new IInboundMessageNotification() {
+					// 接收信息回调
+					@Override
+					public void process(AGateway gateway,
+							MessageTypes messageTypes, InboundMessage message) {
+						logger.info("收到短信："+messageTypes.toString());
+						System.out.println(message);
+						try {
+							if ("SM".equals(message.getMemLocation())) {// 过滤一下，一条短信处理一次
+								if (!reciveCallBacks.isEmpty()) {
+									for (IReciveCallBack callBack : reciveCallBacks) {
+										callBack.process(message
+												.getOriginator().substring(2),
+												message.getText());
+									}
+								}
+							}
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						} finally {
+							try {
+								Service.getInstance().deleteMessage(message);
+							} catch (Exception e) {
+								e.printStackTrace();
+							} // 删除处理过的短信
+						}
 					}
-				}
-			}
-		});
-		Service.getInstance().setOutboundMessageNotification(new IOutboundMessageNotification() {
-			//发送回调
-			@Override
-			public void process(AGateway gateway, OutboundMessage message) {
-				if(!sendCallBacks.isEmpty()){
-					for(ISendCallBack callBack: sendCallBacks){
-						callBack.process(message.getFrom(), message.getText());
+
+				});
+		Service.getInstance().setOutboundMessageNotification(
+				new IOutboundMessageNotification() {
+					// 发送回调
+					@Override
+					public void process(AGateway gateway,
+							OutboundMessage message) {
+						if (!sendCallBacks.isEmpty()) {
+							for (ISendCallBack callBack : sendCallBacks) {
+								callBack.process(message.getFrom(),
+										message.getText());
+							}
+						}
 					}
-				}
-			}
-		});
+				});
 		try {
 			Service.getInstance().addGateway(gateway);
 			Service.getInstance().startService();
@@ -110,6 +134,7 @@ public class SmsService implements ISmsService {
 				.getPortIdentifiers();
 		int bauds[] = { 9600, 14400, 19200, 28800, 33600, 38400, 56000, 57600,
 				115200 };
+		// int bauds[] = { 19200 };
 		CommPortIdentifier portId = null;
 		while (portList.hasMoreElements()) {
 			portId = portList.nextElement();
@@ -197,7 +222,7 @@ public class SmsService implements ISmsService {
 
 	@Override
 	public void sendMessage(String phoneNumber, String message) {
-		logger.info("发送短信：to:{} ,msg: {}",phoneNumber,message);
+		logger.info("发送短信：to:{} ,msg: {}", phoneNumber, message);
 		if (!SmsService.started) {
 			logger.info("短信服务没有启动。");
 			return;
@@ -236,5 +261,5 @@ public class SmsService implements ISmsService {
 	public void setSendCallBacks(List<ISendCallBack> sendCallBacks) {
 		this.sendCallBacks = sendCallBacks;
 	}
-	
+
 }

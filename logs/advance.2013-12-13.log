@@ -1,0 +1,861 @@
+15:58:20.919 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization started
+15:58:21.053 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Refreshing Root WebApplicationContext: startup date [Fri Dec 13 15:58:21 CST 2013]; root of context hierarchy
+15:58:21.105 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/myworkspace/advance/target/classes/applicationContext.xml]
+15:58:21.441 [localhost-startStop-1] INFO  o.s.c.a.ClassPathBeanDefinitionScanner - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+15:58:21.787 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/myworkspace/advance/target/classes/applicationContext-shiro.xml]
+15:58:21.809 [localhost-startStop-1] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'shiroDbRealm': replacing [Generic bean: class [sylarlove.advance.realm.ShiroDbRealm]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\myworkspace\advance\target\classes\sylarlove\advance\realm\ShiroDbRealm.class]] with [Generic bean: class [sylarlove.advance.realm.ShiroDbRealm]; scope=; abstract=false; lazyInit=true; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/myworkspace/advance/target/classes/applicationContext-shiro.xml]]
+15:58:21.810 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/myworkspace/advance/target/classes/applicationContext-sms.xml]
+15:58:22.013 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer - Loading properties file from URL [file:/E:/myworkspace/advance/target/classes/jdbc.properties]
+15:58:22.025 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+15:58:22.240 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:22.242 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:22.310 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean '(inner bean)' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:22.310 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean '(inner bean)' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:22.327 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean '(inner bean)' of type [class org.springframework.data.repository.core.support.PropertiesBasedNamedQueries] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:22.371 [localhost-startStop-1] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+15:58:22.419 [localhost-startStop-1] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+15:58:22.566 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'dataSource' of type [class com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:22.590 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'hibernateJpaVendorAdapter' of type [class org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:22.609 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:58:22.803 [localhost-startStop-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+15:58:22.816 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.6.Final}
+15:58:22.821 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:58:22.824 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:58:22.932 [localhost-startStop-1] INFO  org.hibernate.ejb.Ejb3Configuration - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:58:23.167 [localhost-startStop-1] INFO  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+15:58:23.267 [localhost-startStop-1] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflt8y1t6zg7ddqi1d0|33f45d, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflt8y1t6zg7ddqi1d0|33f45d, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/vms?characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:58:23.913 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+15:58:23.933 [localhost-startStop-1] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+15:58:24.304 [localhost-startStop-1] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+15:58:24.313 [localhost-startStop-1] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+15:58:24.498 [localhost-startStop-1] INFO  o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+15:58:24.505 [localhost-startStop-1] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+15:58:24.648 [localhost-startStop-1] INFO  o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+15:58:24.649 [localhost-startStop-1] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+15:58:24.692 [localhost-startStop-1] INFO  org.hibernate.validator.util.Version - Hibernate Validator 4.1.0.Final
+15:58:24.701 [localhost-startStop-1] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+15:58:24.729 [localhost-startStop-1] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+15:58:25.079 [localhost-startStop-1] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [sylarlove.advance.model.main]; using defaults.
+15:58:25.324 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+15:58:25.324 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+15:58:25.331 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+15:58:25.492 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_organization
+15:58:25.492 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, index, name, parent_id]
+15:58:25.492 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_k8ujwspl3j59b9jf525q8wjsm]
+15:58:25.493 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_k8ujwspl3j59b9jf525q8wjsm, primary]
+15:58:25.523 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_permission
+15:58:25.523 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+15:58:25.523 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:58:25.523 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+15:58:25.541 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role
+15:58:25.541 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+15:58:25.541 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:58:25.541 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+15:58:25.569 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role_sa_t_permission
+15:58:25.569 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_role_id, permissions_id]
+15:58:25.569 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+15:58:25.569 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+15:58:25.608 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user
+15:58:25.608 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, username, phone, status, email, organization_id, create_time, realname, password]
+15:58:25.608 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_sy1r7u3vmw0vk9vc5luc3p0ks]
+15:58:25.608 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_sy1r7u3vmw0vk9vc5luc3p0ks, uk_j0juytie7lblr8wdok1pkbap1]
+15:58:25.638 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user_sa_t_role
+15:58:25.638 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_user_id, roles_id]
+15:58:25.638 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+15:58:25.638 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+15:58:25.678 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_car_type
+15:58:25.678 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, name]
+15:58:25.678 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:58:25.678 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_dltbu6u5nix3wep1wpofwktwe]
+15:58:25.718 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_card
+15:58:25.718 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [cardtype, id, number]
+15:58:25.718 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:58:25.718 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_fv3muenbn114v89v47h4562m4]
+15:58:25.765 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_controller
+15:58:25.765 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, door_id, ip]
+15:58:25.765 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1irrnet40nfb8v9ab0eenou6c]
+15:58:25.765 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_k43u6e2th1jg5qn1h181jtk2m, uk_opfyxopyoptth2rd0qagwf4qg, fk_1irrnet40nfb8v9ab0eenou6c, primary]
+15:58:25.791 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_dispatch_car_form
+15:58:25.791 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [car_id, reason, line, id, carmanager, approve_time, end_time, approveperson, create_time, target, start_time, driver, user, agree]
+15:58:25.791 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:58:25.791 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+15:58:25.825 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_door
+15:58:25.825 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, organization_id, name]
+15:58:25.826 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_mptuyuunm1nl4bvv7yy7nadx4]
+15:58:25.826 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_mptuyuunm1nl4bvv7yy7nadx4]
+15:58:25.873 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car
+15:58:25.874 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, level, car_id, status, organization_id, create_time, user_id, car_type_id, notify_id, license]
+15:58:25.874 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, fk_7x2t8uhtbj0ae6atxqgjyjkng, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+15:58:25.874 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, primary, fk_7x2t8uhtbj0ae6atxqgjyjkng, uk_r4sdxtyvfsonf9g1owhsjho0q, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+15:58:25.898 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car_record
+15:58:25.898 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, form_id, door_id, type, date]
+15:58:25.899 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy]
+15:58:25.899 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy, primary]
+15:58:25.907 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person
+15:58:25.907 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, certificate, sex, phone, status, organization_id, name, create_time, notify_id, card_id]
+15:58:25.907 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, fk_7ia9p7s8q6y96nm6mf1t7bd7v]
+15:58:25.908 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_sbxlbxcw14u1q4j7gp3uwg2eo, fk_7ia9p7s8q6y96nm6mf1t7bd7v, fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, primary]
+15:58:25.960 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_record
+15:58:25.960 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, status, leave_id, door_id, type, date]
+15:58:25.960 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_r0e079u7lsicwjpgknujloiv9, fk_11q8b7yi54hpn5wyvy61b4i2n]
+15:58:25.961 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_r0e079u7lsicwjpgknujloiv9, primary, fk_11q8b7yi54hpn5wyvy61b4i2n]
+15:58:26.007 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_sa_t_user
+15:58:26.007 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [t_inner_person_id, users_id]
+15:58:26.007 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+15:58:26.007 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+15:58:26.029 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_leave
+15:58:26.029 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, remark, reason, end_time, approve_time, approveperson, create_time, start_time, agree]
+15:58:26.029 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4lqjos9mr7yopxnuhvqiamkf9]
+15:58:26.030 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_4lqjos9mr7yopxnuhvqiamkf9]
+15:58:26.062 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_notify
+15:58:26.062 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [endtime, id, starttime, name]
+15:58:26.062 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:58:26.062 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_ex15o63s1f48u6qodwrn39ofy]
+15:58:26.085 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_car
+15:58:26.085 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, create_time, license]
+15:58:26.085 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+15:58:26.085 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_9dmq5oxvipoiof5d646xvy1b2, primary, fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+15:58:26.100 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_person
+15:58:26.100 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sex, phone, status, name, create_time, card_id]
+15:58:26.100 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pugojeiwngr3g5ga5sjlj6kd7]
+15:58:26.101 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pugojeiwngr3g5ga5sjlj6kd7, uk_b04s2pvej5dfgr2i5b9yyaed4, primary]
+15:58:26.119 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_reader
+15:58:26.119 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, gate_number, number, type, controle_id]
+15:58:26.119 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_bxq69cf23sfqqsrjlidwwuist]
+15:58:26.119 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_bxq69cf23sfqqsrjlidwwuist, primary]
+15:58:26.141 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.hibernate_sequences
+15:58:26.141 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sequence_next_hi_value, sequence_name]
+15:58:26.142 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+15:58:26.142 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+15:58:26.142 [localhost-startStop-1] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+15:58:26.278 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'entityManagerFactory' of type [class org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.279 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'entityManagerFactory' of type [class com.sun.proxy.$Proxy58] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.299 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean '(inner bean)#1' of type [class com.sun.proxy.$Proxy60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.534 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'userDao' of type [class org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.642 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'userDao' of type [class com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.648 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'userService' of type [class sylarlove.advance.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.655 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+15:58:26.655 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'shiroDbRealm' of type [class sylarlove.advance.realm.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.675 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'shiroEhcacheManager' of type [class org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.676 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'shiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+15:58:26.684 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [shiroDbRealm.authorizationCache]
+15:58:26.685 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:58:26.726 [localhost-startStop-1] INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@c8204f: defining beans [shiroDbRealm,organizationService,userService,carTypeService,controllerService,dispatchCarFormService,doorService,innerCarService,innerPersonService,leaveService,myRecordService,notifyService,recordServiceEndpoint,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource,entityManagerFactory,hibernateJpaVendorAdapter,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,controllerDao,dispatchCarFormDao,readerDao,innerCarDao,innerPersonDao,innerCarRecordDao,innerPersonRecordDao,organizationDao,cardDao,carTypeDao,notifyDao,userDao,leaveDao,doorDao,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,securityManager,shiroFilter,shiroEhcacheManager,lifecycleBeanPostProcessor,sylarlove.advance.moudle.sms.SmsService#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+15:58:27.247 [localhost-startStop-1] INFO  s.advance.moudle.sms.SmsService - 检测串口：COM5,9600
+15:58:30.281 [localhost-startStop-1] INFO  s.advance.moudle.sms.SmsService - 发现短信猫设备，正在获取配置信息
+15:58:31.492 [localhost-startStop-1] INFO  s.advance.moudle.sms.SmsService -  设备信息: Quectel_M35
+15:58:31.528 [localhost-startStop-1] INFO  smslib - SMSLib: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://smslib.org
+15:58:31.529 [localhost-startStop-1] INFO  smslib - Version: 3.5.3
+15:58:31.529 [localhost-startStop-1] INFO  smslib - JRE Version: 1.7.0_25
+15:58:31.529 [localhost-startStop-1] INFO  smslib - JRE Impl Version: 23.25-b01
+15:58:31.529 [localhost-startStop-1] INFO  smslib - O/S: Windows 7 / x86 / 6.1
+15:58:31.590 [localhost-startStop-1] INFO  smslib - Queue directory not defined. Queued messages will not be saved to filesystem.
+15:58:31.597 [Thread-14] INFO  smslib - GTW: 短信猫: Starting gateway, using Huawei (Generic) AT Handler.
+15:58:31.598 [Thread-14] INFO  smslib - GTW: 短信猫: Opening: COM5 @9600
+15:58:49.299 [Thread-14] INFO  smslib - GTW: 短信猫: GSM: Registered to home network.
+15:58:49.463 [Thread-14] INFO  smslib - GTW: 短信猫: MEM: Storage Locations Found: SM ME MT
+15:58:49.463 [Thread-14] WARN  smslib - GTW: 短信猫: Callback indications were *not* set succesfully!
+15:58:49.569 [Thread-14] INFO  smslib - GTW: 短信猫: Signal level/bit error rate: +CSQ: 23,0OK
+15:58:49.676 [Thread-14] INFO  smslib - GTW: 短信猫: Network registration: +CREG: 1,1OK
+15:58:49.756 [Thread-14] INFO  smslib - GTW: 短信猫: Network operator: +COPS: 0,0,"CHINA UNICOM GSM"OK
+15:58:49.762 [Thread-14] INFO  smslib - GTW: 短信猫: Gateway started.
+15:58:50.784 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 29839 ms
+15:58:50.784 [localhost-startStop-1] INFO  s.a.m.s.w.l.SmsLifecycleListener - 短信服务生命周期监听器初始化。
+15:58:50.871 [localhost-startStop-1] INFO  o.s.w.t.h.MessageDispatcherServlet - FrameworkServlet 'spring-ws': initialization started
+15:58:50.875 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'spring-ws-servlet': startup date [Fri Dec 13 15:58:50 CST 2013]; parent: Root WebApplicationContext
+15:58:50.876 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-ws-servlet.xml]
+15:58:50.920 [localhost-startStop-1] INFO  o.s.c.a.ClassPathBeanDefinitionScanner - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+15:58:50.975 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+15:58:51.088 [localhost-startStop-1] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+15:58:51.090 [localhost-startStop-1] INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@54ee87: defining beans [recordServiceEndpoint,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.ws.server.endpoint.mapping.PayloadRootAnnotationMethodEndpointMapping#0,org.springframework.ws.soap.server.endpoint.mapping.SoapActionAnnotationMethodEndpointMapping#0,org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping#0,org.springframework.ws.server.endpoint.adapter.method.dom.DomPayloadMethodProcessor#0,org.springframework.ws.server.endpoint.adapter.method.SourcePayloadMethodProcessor#0,org.springframework.ws.server.endpoint.adapter.method.dom.Dom4jPayloadMethodProcessor#0,org.springframework.ws.server.endpoint.adapter.method.jaxb.XmlRootElementPayloadMethodProcessor#0,org.springframework.ws.server.endpoint.adapter.method.jaxb.JaxbElementPayloadMethodProcessor#0,org.springframework.ws.server.endpoint.adapter.method.dom.XomPayloadMethodProcessor#0,org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter#0,org.springframework.ws.soap.server.endpoint.SoapFaultAnnotationExceptionResolver#0,org.springframework.ws.soap.server.endpoint.SimpleSoapExceptionResolver#0,org.springframework.xml.xsd.SimpleXsdSchema#0,record,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@c8204f
+15:58:51.711 [localhost-startStop-1] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+15:58:51.717 [localhost-startStop-1] INFO  o.s.w.t.h.MessageDispatcherServlet - FrameworkServlet 'spring-ws': initialization completed in 845 ms
+15:58:51.758 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'springDispatcherServlet': initialization started
+15:58:51.760 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'springDispatcherServlet-servlet': startup date [Fri Dec 13 15:58:51 CST 2013]; parent: Root WebApplicationContext
+15:58:51.760 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+15:58:51.919 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+15:58:51.939 [localhost-startStop-1] INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@aba95c: defining beans [indexController,organizationController,userController,carTypeController,dispatchCarFormController,doorController,innerCarController,innerPersonController,leaveController,notifyController,recordController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.validation.beanvalidation.LocalValidatorFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,validator,messageSource,multipartResolver,org.springframework.web.servlet.view.InternalResourceViewResolver#0,exceptionResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@c8204f
+15:58:52.169 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index || /],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String sylarlove.advance.controller.IndexController.index()
+15:58:52.170 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView sylarlove.advance.controller.IndexController.login(sylarlove.advance.controller.LoginCommand,org.springframework.validation.Errors)
+15:58:52.170 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String sylarlove.advance.controller.IndexController.login(sylarlove.advance.controller.LoginCommand)
+15:58:52.170 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String sylarlove.advance.controller.IndexController.logout()
+15:58:52.170 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/unauthorized],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String sylarlove.advance.controller.IndexController.unauthorized()
+15:58:52.171 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/organization/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> sylarlove.advance.controller.OrganizationController.add(sylarlove.advance.model.main.Organization,org.springframework.validation.Errors)
+15:58:52.171 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/organization/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> sylarlove.advance.controller.OrganizationController.delete(java.lang.Long)
+15:58:52.172 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/organization/update],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> sylarlove.advance.controller.OrganizationController.update(sylarlove.advance.model.main.Organization,org.springframework.validation.Errors)
+15:58:52.172 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/organization/getRoot],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public sylarlove.advance.model.main.Organization sylarlove.advance.controller.OrganizationController.getRoot()
+15:58:52.172 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/organization/getOrganization],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String sylarlove.advance.controller.OrganizationController.getOrganization(java.lang.Long,org.springframework.ui.Model)
+15:58:52.173 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> sylarlove.advance.controller.UserController.add(sylarlove.advance.model.main.User,org.springframework.validation.Errors)
+15:58:52.173 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/users || /user/ || /user],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String sylarlove.advance.controller.UserController.list(org.springframework.ui.Model)
+15:58:52.173 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> sylarlove.advance.controller.UserController.delete(sylarlove.advance.model.main.User)
+15:58:52.173 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/update],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> sylarlove.advance.controller.UserController.update(sylarlove.advance.model.main.User,org.springframework.validation.Errors)
+15:58:52.174 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/carType/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.CarTypeController.add(cn.huijin.vms.model.CarType,org.springframework.validation.Errors)
+15:58:52.174 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/carType/carTypes || /carType/ || /carType],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.CarTypeController.list(org.springframework.ui.Model)
+15:58:52.175 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/carType/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.CarTypeController.delete(cn.huijin.vms.model.CarType)
+15:58:52.175 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/carType/update],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.CarTypeController.update(cn.huijin.vms.model.CarType,org.springframework.validation.Errors)
+15:58:52.175 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/dispatchCarForm/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.DispatchCarFormController.add(cn.huijin.vms.model.DispatchCarForm,org.springframework.validation.Errors)
+15:58:52.176 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/dispatchCarForm/dispatchCarForms || /dispatchCarForm/ || /dispatchCarForm],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.DispatchCarFormController.list(org.springframework.ui.Model)
+15:58:52.176 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/door/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.DoorController.add(cn.huijin.vms.model.Door,org.springframework.validation.Errors,org.springframework.ui.Model)
+15:58:52.177 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/door/doors || /door/ || /door],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.DoorController.list(org.springframework.ui.Model)
+15:58:52.177 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/door/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.DoorController.delete(cn.huijin.vms.model.Door)
+15:58:52.177 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/door/update],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.DoorController.update(cn.huijin.vms.model.Door,org.springframework.validation.Errors,org.springframework.ui.Model)
+15:58:52.177 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/door/getReaders],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.DoorController.getReader(java.lang.Long,org.springframework.ui.Model)
+15:58:52.177 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/door/getControllers],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.DoorController.getController(java.lang.Long,org.springframework.ui.Model)
+15:58:52.178 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerCar/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.InnerCarController.add(cn.huijin.vms.model.InnerCar,org.springframework.validation.Errors)
+15:58:52.178 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerCar/innerCars || /innerCar/ || /innerCar],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.InnerCarController.list(org.springframework.ui.Model)
+15:58:52.179 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerCar/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.InnerCarController.delete(cn.huijin.vms.model.InnerCar)
+15:58:52.179 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerCar/update],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.InnerCarController.update(cn.huijin.vms.model.InnerCar,org.springframework.validation.Errors)
+15:58:52.180 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerPerson/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.InnerPersonController.add(cn.huijin.vms.model.InnerPerson,org.springframework.validation.Errors,java.lang.String)
+15:58:52.180 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerPerson/innerPersons || /innerPerson/ || /innerPerson],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.InnerPersonController.list(org.springframework.ui.Model)
+15:58:52.180 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerPerson/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.InnerPersonController.delete(cn.huijin.vms.model.InnerPerson)
+15:58:52.180 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerPerson/update],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.InnerPersonController.update(cn.huijin.vms.model.InnerPerson,org.springframework.validation.Errors,java.lang.String)
+15:58:52.181 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/innerPerson/changeStatus/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.InnerPersonController.changeStatus(java.lang.Long)
+15:58:52.181 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/leave/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.LeaveController.add(cn.huijin.vms.model.Leave,org.springframework.validation.Errors)
+15:58:52.181 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/leave/leaves || /leave/ || /leave],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.LeaveController.list(org.springframework.ui.Model)
+15:58:52.182 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/leave/changeAgree],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.LeaveController.changeAgree(java.lang.Long)
+15:58:52.182 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/notify/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.NotifyController.add(cn.huijin.vms.model.Notify,org.springframework.validation.Errors)
+15:58:52.182 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/notify/notifys || /notify/ || /notify],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.NotifyController.list(org.springframework.ui.Model)
+15:58:52.183 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/notify/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.NotifyController.delete(cn.huijin.vms.model.Notify)
+15:58:52.183 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/notify/update],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> cn.huijin.vms.controller.NotifyController.update(cn.huijin.vms.model.Notify,org.springframework.validation.Errors)
+15:58:52.183 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/record/innerCarRecords],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.RecordController.listInnerCarRecords(org.springframework.ui.Model)
+15:58:52.184 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/record/innerPersonRecords],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.huijin.vms.controller.RecordController.listInnerPersonRecords(org.springframework.ui.Model)
+15:58:52.196 [localhost-startStop-1] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+15:58:52.897 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+15:58:52.899 [localhost-startStop-1] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+15:58:53.007 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'springDispatcherServlet': initialization completed in 1249 ms
+15:59:02.181 [NotifyQueueManager] INFO  s.advance.moudle.sms.SmsService - 收到短信：INBOUND
+16:04:11.471 [NotifyQueueManager] INFO  s.advance.moudle.sms.SmsService - 收到短信：INBOUND
+16:23:08.902 [main] WARN  org.unitils.core.ConfigurationLoader - No custom configuration file unitils.properties found.
+16:23:08.910 [main] INFO  org.unitils.core.ConfigurationLoader - No local configuration file unitils-local.properties found.
+16:23:09.099 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@408a33: startup date [Fri Dec 13 16:23:09 CST 2013]; root of context hierarchy
+16:23:09.155 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+16:23:09.424 [main] INFO  o.s.c.a.ClassPathBeanDefinitionScanner - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+16:23:09.874 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-sms.xml]
+16:23:10.017 [main] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer - Loading properties file from URL [file:/E:/myworkspace/advance/target/classes/jdbc.properties]
+16:23:10.026 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+16:23:10.117 [main] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+16:23:10.205 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+16:23:10.340 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+16:23:10.483 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+16:23:10.491 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.6.Final}
+16:23:10.493 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:23:10.495 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+16:23:10.522 [main] INFO  org.hibernate.ejb.Ejb3Configuration - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:23:10.644 [main] INFO  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+16:23:10.712 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflt8y1t7vc5g1xihmdm|c3f751, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflt8y1t7vc5g1xihmdm|c3f751, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/vms?characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+16:23:10.961 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+16:23:10.971 [main] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+16:23:11.300 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+16:23:11.307 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+16:23:11.472 [main] INFO  o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+16:23:11.478 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+16:23:11.541 [main] INFO  o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+16:23:11.542 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+16:23:11.585 [main] INFO  org.hibernate.validator.util.Version - Hibernate Validator 4.1.0.Final
+16:23:11.591 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:23:11.618 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:23:11.911 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [sylarlove.advance.model.main]; using defaults.
+16:23:12.137 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+16:23:12.137 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+16:23:12.141 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+16:23:12.162 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_organization
+16:23:12.162 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, index, name, parent_id]
+16:23:12.162 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_k8ujwspl3j59b9jf525q8wjsm]
+16:23:12.162 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_k8ujwspl3j59b9jf525q8wjsm, primary]
+16:23:12.169 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_permission
+16:23:12.169 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:23:12.169 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:23:12.170 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:23:12.176 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role
+16:23:12.177 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:23:12.177 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:23:12.177 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:23:12.187 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role_sa_t_permission
+16:23:12.187 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_role_id, permissions_id]
+16:23:12.187 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:23:12.187 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:23:12.195 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user
+16:23:12.196 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, username, phone, status, email, organization_id, create_time, realname, password]
+16:23:12.196 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_sy1r7u3vmw0vk9vc5luc3p0ks]
+16:23:12.196 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_sy1r7u3vmw0vk9vc5luc3p0ks, uk_j0juytie7lblr8wdok1pkbap1]
+16:23:12.204 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user_sa_t_role
+16:23:12.204 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_user_id, roles_id]
+16:23:12.204 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:23:12.204 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:23:12.210 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_car_type
+16:23:12.210 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, name]
+16:23:12.210 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:23:12.211 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_dltbu6u5nix3wep1wpofwktwe]
+16:23:12.218 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_card
+16:23:12.218 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [cardtype, id, number]
+16:23:12.219 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:23:12.219 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_fv3muenbn114v89v47h4562m4]
+16:23:12.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_controller
+16:23:12.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, door_id, ip]
+16:23:12.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1irrnet40nfb8v9ab0eenou6c]
+16:23:12.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_k43u6e2th1jg5qn1h181jtk2m, uk_opfyxopyoptth2rd0qagwf4qg, fk_1irrnet40nfb8v9ab0eenou6c, primary]
+16:23:12.235 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_dispatch_car_form
+16:23:12.235 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [car_id, reason, line, id, carmanager, approve_time, end_time, approveperson, create_time, target, start_time, driver, user, agree]
+16:23:12.235 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:23:12.235 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:23:12.242 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_door
+16:23:12.242 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, organization_id, name]
+16:23:12.243 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:23:12.243 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:23:12.252 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car
+16:23:12.252 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, level, car_id, status, organization_id, create_time, user_id, car_type_id, notify_id, license]
+16:23:12.253 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, fk_7x2t8uhtbj0ae6atxqgjyjkng, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:23:12.253 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, primary, fk_7x2t8uhtbj0ae6atxqgjyjkng, uk_r4sdxtyvfsonf9g1owhsjho0q, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:23:12.260 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car_record
+16:23:12.260 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, form_id, door_id, type, date]
+16:23:12.260 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy]
+16:23:12.260 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy, primary]
+16:23:12.268 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person
+16:23:12.269 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, certificate, sex, phone, status, organization_id, name, create_time, notify_id, card_id]
+16:23:12.269 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, fk_7ia9p7s8q6y96nm6mf1t7bd7v]
+16:23:12.269 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_sbxlbxcw14u1q4j7gp3uwg2eo, fk_7ia9p7s8q6y96nm6mf1t7bd7v, fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, primary]
+16:23:12.276 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_record
+16:23:12.276 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, status, leave_id, door_id, type, date]
+16:23:12.276 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_r0e079u7lsicwjpgknujloiv9, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:23:12.276 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_r0e079u7lsicwjpgknujloiv9, primary, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:23:12.283 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_sa_t_user
+16:23:12.283 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [t_inner_person_id, users_id]
+16:23:12.283 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:23:12.283 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:23:12.290 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_leave
+16:23:12.291 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, remark, reason, end_time, approve_time, approveperson, create_time, start_time, agree]
+16:23:12.291 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:23:12.291 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:23:12.298 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_notify
+16:23:12.298 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [endtime, id, starttime, name]
+16:23:12.298 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:23:12.298 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_ex15o63s1f48u6qodwrn39ofy]
+16:23:12.304 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_car
+16:23:12.304 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, create_time, license]
+16:23:12.305 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:23:12.305 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_9dmq5oxvipoiof5d646xvy1b2, primary, fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:23:12.311 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_person
+16:23:12.312 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sex, phone, status, name, create_time, card_id]
+16:23:12.312 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pugojeiwngr3g5ga5sjlj6kd7]
+16:23:12.312 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pugojeiwngr3g5ga5sjlj6kd7, uk_b04s2pvej5dfgr2i5b9yyaed4, primary]
+16:23:12.318 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_reader
+16:23:12.319 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, gate_number, number, type, controle_id]
+16:23:12.319 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_bxq69cf23sfqqsrjlidwwuist]
+16:23:12.319 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_bxq69cf23sfqqsrjlidwwuist, primary]
+16:23:12.333 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.hibernate_sequences
+16:23:12.333 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sequence_next_hi_value, sequence_name]
+16:23:12.334 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:23:12.334 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+16:23:12.334 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+16:23:12.473 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1513c2b: defining beans [shiroDbRealm,organizationService,userService,carTypeService,controllerService,dispatchCarFormService,doorService,innerCarService,innerPersonService,leaveService,myRecordService,notifyService,recordServiceEndpoint,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource,entityManagerFactory,hibernateJpaVendorAdapter,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,controllerDao,innerPersonRecordDao,organizationDao,readerDao,cardDao,userDao,notifyDao,innerPersonDao,dispatchCarFormDao,carTypeDao,doorDao,leaveDao,innerCarRecordDao,innerCarDao,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,sylarlove.advance.moudle.sms.SmsService#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+16:23:13.021 [main] INFO  s.advance.moudle.sms.SmsService - 没有找到短信猫设备
+16:26:37.165 [main] WARN  org.unitils.core.ConfigurationLoader - No custom configuration file unitils.properties found.
+16:26:37.168 [main] INFO  org.unitils.core.ConfigurationLoader - No local configuration file unitils-local.properties found.
+16:26:37.318 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@131436e: startup date [Fri Dec 13 16:26:37 CST 2013]; root of context hierarchy
+16:26:37.371 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+16:26:37.633 [main] INFO  o.s.c.a.ClassPathBeanDefinitionScanner - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+16:26:38.083 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-sms.xml]
+16:26:38.217 [main] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer - Loading properties file from URL [file:/E:/myworkspace/advance/target/classes/jdbc.properties]
+16:26:38.225 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+16:26:38.310 [main] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+16:26:38.395 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+16:26:38.526 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+16:26:38.667 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+16:26:38.674 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.6.Final}
+16:26:38.677 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:26:38.678 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+16:26:38.704 [main] INFO  org.hibernate.ejb.Ejb3Configuration - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:26:38.825 [main] INFO  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+16:26:38.890 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflt8y1t7zssj2ijrm0|1a21fa7, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflt8y1t7zssj2ijrm0|1a21fa7, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/vms?characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+16:26:39.139 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+16:26:39.148 [main] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+16:26:39.426 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+16:26:39.432 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+16:26:39.557 [main] INFO  o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+16:26:39.562 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+16:26:39.615 [main] INFO  o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+16:26:39.616 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+16:26:39.654 [main] INFO  org.hibernate.validator.util.Version - Hibernate Validator 4.1.0.Final
+16:26:39.660 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:26:39.680 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:26:39.934 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [sylarlove.advance.model.main]; using defaults.
+16:26:40.161 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+16:26:40.161 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+16:26:40.165 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+16:26:40.184 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_organization
+16:26:40.184 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, index, name, parent_id]
+16:26:40.184 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_k8ujwspl3j59b9jf525q8wjsm]
+16:26:40.184 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_k8ujwspl3j59b9jf525q8wjsm, primary]
+16:26:40.190 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_permission
+16:26:40.190 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:26:40.190 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:26:40.190 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:26:40.200 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role
+16:26:40.200 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:26:40.200 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:26:40.200 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:26:40.206 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role_sa_t_permission
+16:26:40.206 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_role_id, permissions_id]
+16:26:40.206 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:26:40.207 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:26:40.213 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user
+16:26:40.213 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, username, phone, status, email, organization_id, create_time, realname, password]
+16:26:40.213 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_sy1r7u3vmw0vk9vc5luc3p0ks]
+16:26:40.213 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_sy1r7u3vmw0vk9vc5luc3p0ks, uk_j0juytie7lblr8wdok1pkbap1]
+16:26:40.220 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user_sa_t_role
+16:26:40.220 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_user_id, roles_id]
+16:26:40.220 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:26:40.220 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:26:40.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_car_type
+16:26:40.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, name]
+16:26:40.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:26:40.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_dltbu6u5nix3wep1wpofwktwe]
+16:26:40.231 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_card
+16:26:40.232 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [cardtype, id, number]
+16:26:40.232 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:26:40.232 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_fv3muenbn114v89v47h4562m4]
+16:26:40.239 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_controller
+16:26:40.239 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, door_id, ip]
+16:26:40.239 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1irrnet40nfb8v9ab0eenou6c]
+16:26:40.239 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_k43u6e2th1jg5qn1h181jtk2m, uk_opfyxopyoptth2rd0qagwf4qg, fk_1irrnet40nfb8v9ab0eenou6c, primary]
+16:26:40.246 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_dispatch_car_form
+16:26:40.246 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [car_id, reason, line, id, carmanager, approve_time, end_time, approveperson, create_time, target, start_time, driver, user, agree]
+16:26:40.246 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:26:40.246 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:26:40.252 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_door
+16:26:40.252 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, organization_id, name]
+16:26:40.252 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:26:40.253 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:26:40.261 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car
+16:26:40.261 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, level, car_id, status, organization_id, create_time, user_id, car_type_id, notify_id, license]
+16:26:40.261 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, fk_7x2t8uhtbj0ae6atxqgjyjkng, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:26:40.261 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, primary, fk_7x2t8uhtbj0ae6atxqgjyjkng, uk_r4sdxtyvfsonf9g1owhsjho0q, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:26:40.268 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car_record
+16:26:40.268 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, form_id, door_id, type, date]
+16:26:40.268 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy]
+16:26:40.268 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy, primary]
+16:26:40.277 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person
+16:26:40.277 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, certificate, sex, phone, status, organization_id, name, create_time, notify_id, card_id]
+16:26:40.277 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, fk_7ia9p7s8q6y96nm6mf1t7bd7v]
+16:26:40.277 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_sbxlbxcw14u1q4j7gp3uwg2eo, fk_7ia9p7s8q6y96nm6mf1t7bd7v, fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, primary]
+16:26:40.283 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_record
+16:26:40.283 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, status, leave_id, door_id, type, date]
+16:26:40.283 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_r0e079u7lsicwjpgknujloiv9, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:26:40.283 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_r0e079u7lsicwjpgknujloiv9, primary, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:26:40.289 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_sa_t_user
+16:26:40.289 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [t_inner_person_id, users_id]
+16:26:40.289 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:26:40.289 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:26:40.295 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_leave
+16:26:40.295 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, remark, reason, end_time, approve_time, approveperson, create_time, start_time, agree]
+16:26:40.295 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:26:40.295 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:26:40.301 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_notify
+16:26:40.301 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [endtime, id, starttime, name]
+16:26:40.301 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:26:40.301 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_ex15o63s1f48u6qodwrn39ofy]
+16:26:40.307 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_car
+16:26:40.307 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, create_time, license]
+16:26:40.307 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:26:40.307 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_9dmq5oxvipoiof5d646xvy1b2, primary, fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:26:40.313 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_person
+16:26:40.313 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sex, phone, status, name, create_time, card_id]
+16:26:40.313 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pugojeiwngr3g5ga5sjlj6kd7]
+16:26:40.313 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pugojeiwngr3g5ga5sjlj6kd7, uk_b04s2pvej5dfgr2i5b9yyaed4, primary]
+16:26:40.319 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_reader
+16:26:40.319 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, gate_number, number, type, controle_id]
+16:26:40.319 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_bxq69cf23sfqqsrjlidwwuist]
+16:26:40.319 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_bxq69cf23sfqqsrjlidwwuist, primary]
+16:26:40.330 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.hibernate_sequences
+16:26:40.330 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sequence_next_hi_value, sequence_name]
+16:26:40.330 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:26:40.330 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+16:26:40.330 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+16:26:40.460 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@456946: defining beans [shiroDbRealm,organizationService,userService,carTypeService,controllerService,dispatchCarFormService,doorService,innerCarService,innerPersonService,leaveService,myRecordService,notifyService,recordServiceEndpoint,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource,entityManagerFactory,hibernateJpaVendorAdapter,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,controllerDao,innerPersonRecordDao,organizationDao,readerDao,cardDao,userDao,notifyDao,innerPersonDao,dispatchCarFormDao,carTypeDao,doorDao,leaveDao,innerCarRecordDao,innerCarDao,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,sylarlove.advance.moudle.sms.SmsService#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+16:26:41.024 [main] INFO  s.advance.moudle.sms.SmsService - 没有找到短信猫设备
+16:31:52.154 [main] WARN  org.unitils.core.ConfigurationLoader - No custom configuration file unitils.properties found.
+16:31:52.157 [main] INFO  org.unitils.core.ConfigurationLoader - No local configuration file unitils-local.properties found.
+16:31:52.303 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a7f986: startup date [Fri Dec 13 16:31:52 CST 2013]; root of context hierarchy
+16:31:52.354 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+16:31:52.612 [main] INFO  o.s.c.a.ClassPathBeanDefinitionScanner - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+16:31:53.050 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-sms.xml]
+16:31:53.188 [main] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer - Loading properties file from URL [file:/E:/myworkspace/advance/target/classes/jdbc.properties]
+16:31:53.197 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+16:31:53.282 [main] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+16:31:53.371 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+16:31:53.505 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+16:31:53.646 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+16:31:53.653 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.6.Final}
+16:31:53.655 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:31:53.657 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+16:31:53.682 [main] INFO  org.hibernate.ejb.Ejb3Configuration - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:31:53.804 [main] INFO  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+16:31:53.869 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflt8y1t86jttrh147r|dffae5, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflt8y1t86jttrh147r|dffae5, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/vms?characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+16:31:54.120 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+16:31:54.130 [main] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+16:31:54.423 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+16:31:54.428 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+16:31:54.557 [main] INFO  o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+16:31:54.561 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+16:31:54.613 [main] INFO  o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+16:31:54.614 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+16:31:54.648 [main] INFO  org.hibernate.validator.util.Version - Hibernate Validator 4.1.0.Final
+16:31:54.654 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:31:54.674 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:31:54.932 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [sylarlove.advance.model.main]; using defaults.
+16:31:55.150 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+16:31:55.150 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+16:31:55.154 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+16:31:55.172 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_organization
+16:31:55.173 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, index, name, parent_id]
+16:31:55.173 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_k8ujwspl3j59b9jf525q8wjsm]
+16:31:55.173 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_k8ujwspl3j59b9jf525q8wjsm, primary]
+16:31:55.179 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_permission
+16:31:55.179 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:31:55.179 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:31:55.179 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:31:55.188 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role
+16:31:55.188 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:31:55.188 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:31:55.188 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:31:55.194 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role_sa_t_permission
+16:31:55.194 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_role_id, permissions_id]
+16:31:55.194 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:31:55.194 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:31:55.201 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user
+16:31:55.201 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, username, phone, status, email, organization_id, create_time, realname, password]
+16:31:55.201 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_sy1r7u3vmw0vk9vc5luc3p0ks]
+16:31:55.201 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_sy1r7u3vmw0vk9vc5luc3p0ks, uk_j0juytie7lblr8wdok1pkbap1]
+16:31:55.207 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user_sa_t_role
+16:31:55.207 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_user_id, roles_id]
+16:31:55.208 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:31:55.208 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:31:55.213 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_car_type
+16:31:55.213 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, name]
+16:31:55.213 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:31:55.213 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_dltbu6u5nix3wep1wpofwktwe]
+16:31:55.219 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_card
+16:31:55.219 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [cardtype, id, number]
+16:31:55.219 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:31:55.219 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_fv3muenbn114v89v47h4562m4]
+16:31:55.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_controller
+16:31:55.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, door_id, ip]
+16:31:55.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1irrnet40nfb8v9ab0eenou6c]
+16:31:55.226 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_k43u6e2th1jg5qn1h181jtk2m, uk_opfyxopyoptth2rd0qagwf4qg, fk_1irrnet40nfb8v9ab0eenou6c, primary]
+16:31:55.233 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_dispatch_car_form
+16:31:55.233 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [car_id, reason, line, id, carmanager, approve_time, end_time, approveperson, create_time, target, start_time, driver, user, agree]
+16:31:55.233 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:31:55.234 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:31:55.240 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_door
+16:31:55.240 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, organization_id, name]
+16:31:55.240 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:31:55.240 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:31:55.249 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car
+16:31:55.249 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, level, car_id, status, organization_id, create_time, user_id, car_type_id, notify_id, license]
+16:31:55.249 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, fk_7x2t8uhtbj0ae6atxqgjyjkng, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:31:55.249 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, primary, fk_7x2t8uhtbj0ae6atxqgjyjkng, uk_r4sdxtyvfsonf9g1owhsjho0q, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:31:55.255 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car_record
+16:31:55.255 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, form_id, door_id, type, date]
+16:31:55.255 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy]
+16:31:55.256 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy, primary]
+16:31:55.263 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person
+16:31:55.263 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, certificate, sex, phone, status, organization_id, name, create_time, notify_id, card_id]
+16:31:55.263 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, fk_7ia9p7s8q6y96nm6mf1t7bd7v]
+16:31:55.263 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_sbxlbxcw14u1q4j7gp3uwg2eo, fk_7ia9p7s8q6y96nm6mf1t7bd7v, fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, primary]
+16:31:55.270 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_record
+16:31:55.270 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, status, leave_id, door_id, type, date]
+16:31:55.270 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_r0e079u7lsicwjpgknujloiv9, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:31:55.270 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_r0e079u7lsicwjpgknujloiv9, primary, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:31:55.275 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_sa_t_user
+16:31:55.275 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [t_inner_person_id, users_id]
+16:31:55.275 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:31:55.275 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:31:55.281 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_leave
+16:31:55.281 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, remark, reason, end_time, approve_time, approveperson, create_time, start_time, agree]
+16:31:55.281 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:31:55.281 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:31:55.287 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_notify
+16:31:55.287 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [endtime, id, starttime, name]
+16:31:55.287 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:31:55.287 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_ex15o63s1f48u6qodwrn39ofy]
+16:31:55.293 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_car
+16:31:55.293 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, create_time, license]
+16:31:55.293 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:31:55.293 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_9dmq5oxvipoiof5d646xvy1b2, primary, fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:31:55.298 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_person
+16:31:55.298 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sex, phone, status, name, create_time, card_id]
+16:31:55.299 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pugojeiwngr3g5ga5sjlj6kd7]
+16:31:55.299 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pugojeiwngr3g5ga5sjlj6kd7, uk_b04s2pvej5dfgr2i5b9yyaed4, primary]
+16:31:55.304 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_reader
+16:31:55.304 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, gate_number, number, type, controle_id]
+16:31:55.304 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_bxq69cf23sfqqsrjlidwwuist]
+16:31:55.304 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_bxq69cf23sfqqsrjlidwwuist, primary]
+16:31:55.314 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.hibernate_sequences
+16:31:55.314 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sequence_next_hi_value, sequence_name]
+16:31:55.315 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:31:55.315 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+16:31:55.315 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+16:31:55.444 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b0e78a: defining beans [shiroDbRealm,organizationService,userService,carTypeService,controllerService,dispatchCarFormService,doorService,innerCarService,innerPersonService,leaveService,myRecordService,notifyService,recordServiceEndpoint,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource,entityManagerFactory,hibernateJpaVendorAdapter,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,innerPersonDao,dispatchCarFormDao,leaveDao,notifyDao,organizationDao,controllerDao,cardDao,carTypeDao,innerPersonRecordDao,innerCarRecordDao,readerDao,doorDao,innerCarDao,userDao,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,sylarlove.advance.moudle.sms.SmsService#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+16:31:55.994 [main] INFO  s.advance.moudle.sms.SmsService - 没有找到短信猫设备
+16:32:10.511 [main] WARN  org.unitils.core.ConfigurationLoader - No custom configuration file unitils.properties found.
+16:32:10.514 [main] INFO  org.unitils.core.ConfigurationLoader - No local configuration file unitils-local.properties found.
+16:32:10.657 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@131436e: startup date [Fri Dec 13 16:32:10 CST 2013]; root of context hierarchy
+16:32:10.707 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+16:32:10.964 [main] INFO  o.s.c.a.ClassPathBeanDefinitionScanner - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+16:32:11.413 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-sms.xml]
+16:32:11.551 [main] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer - Loading properties file from URL [file:/E:/myworkspace/advance/target/classes/jdbc.properties]
+16:32:11.559 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+16:32:11.648 [main] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+16:32:11.735 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+16:32:11.870 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+16:32:12.012 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+16:32:12.018 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.6.Final}
+16:32:12.021 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:32:12.022 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+16:32:12.048 [main] INFO  org.hibernate.ejb.Ejb3Configuration - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:32:12.168 [main] INFO  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+16:32:12.233 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflt8y1t86xzyi1103d|1a21fa7, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflt8y1t86xzyi1103d|1a21fa7, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/vms?characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+16:32:12.481 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+16:32:12.490 [main] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+16:32:12.783 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+16:32:12.789 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+16:32:12.915 [main] INFO  o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+16:32:12.920 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+16:32:12.972 [main] INFO  o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+16:32:12.972 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+16:32:13.006 [main] INFO  org.hibernate.validator.util.Version - Hibernate Validator 4.1.0.Final
+16:32:13.012 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:32:13.033 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:32:13.290 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [sylarlove.advance.model.main]; using defaults.
+16:32:13.509 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+16:32:13.509 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+16:32:13.513 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+16:32:13.531 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_organization
+16:32:13.531 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, index, name, parent_id]
+16:32:13.531 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_k8ujwspl3j59b9jf525q8wjsm]
+16:32:13.531 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_k8ujwspl3j59b9jf525q8wjsm, primary]
+16:32:13.537 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_permission
+16:32:13.537 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:32:13.537 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:32:13.538 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:32:13.546 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role
+16:32:13.546 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:32:13.547 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:32:13.547 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:32:13.552 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role_sa_t_permission
+16:32:13.553 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_role_id, permissions_id]
+16:32:13.553 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:32:13.553 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:32:13.559 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user
+16:32:13.559 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, username, phone, status, email, organization_id, create_time, realname, password]
+16:32:13.559 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_sy1r7u3vmw0vk9vc5luc3p0ks]
+16:32:13.560 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_sy1r7u3vmw0vk9vc5luc3p0ks, uk_j0juytie7lblr8wdok1pkbap1]
+16:32:13.565 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user_sa_t_role
+16:32:13.565 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_user_id, roles_id]
+16:32:13.565 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:32:13.566 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:32:13.571 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_car_type
+16:32:13.572 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, name]
+16:32:13.572 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:32:13.572 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_dltbu6u5nix3wep1wpofwktwe]
+16:32:13.578 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_card
+16:32:13.578 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [cardtype, id, number]
+16:32:13.579 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:32:13.579 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_fv3muenbn114v89v47h4562m4]
+16:32:13.586 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_controller
+16:32:13.586 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, door_id, ip]
+16:32:13.586 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1irrnet40nfb8v9ab0eenou6c]
+16:32:13.586 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_k43u6e2th1jg5qn1h181jtk2m, uk_opfyxopyoptth2rd0qagwf4qg, fk_1irrnet40nfb8v9ab0eenou6c, primary]
+16:32:13.594 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_dispatch_car_form
+16:32:13.594 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [car_id, reason, line, id, carmanager, approve_time, end_time, approveperson, create_time, target, start_time, driver, user, agree]
+16:32:13.594 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:32:13.594 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:32:13.600 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_door
+16:32:13.600 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, organization_id, name]
+16:32:13.600 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:32:13.601 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:32:13.610 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car
+16:32:13.610 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, level, car_id, status, organization_id, create_time, user_id, car_type_id, notify_id, license]
+16:32:13.611 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, fk_7x2t8uhtbj0ae6atxqgjyjkng, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:32:13.611 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, primary, fk_7x2t8uhtbj0ae6atxqgjyjkng, uk_r4sdxtyvfsonf9g1owhsjho0q, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:32:13.617 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car_record
+16:32:13.617 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, form_id, door_id, type, date]
+16:32:13.617 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy]
+16:32:13.618 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy, primary]
+16:32:13.623 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person
+16:32:13.624 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, certificate, sex, phone, status, organization_id, name, create_time, notify_id, card_id]
+16:32:13.624 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, fk_7ia9p7s8q6y96nm6mf1t7bd7v]
+16:32:13.624 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_sbxlbxcw14u1q4j7gp3uwg2eo, fk_7ia9p7s8q6y96nm6mf1t7bd7v, fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, primary]
+16:32:13.631 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_record
+16:32:13.631 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, status, leave_id, door_id, type, date]
+16:32:13.631 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_r0e079u7lsicwjpgknujloiv9, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:32:13.631 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_r0e079u7lsicwjpgknujloiv9, primary, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:32:13.636 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_sa_t_user
+16:32:13.637 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [t_inner_person_id, users_id]
+16:32:13.637 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:32:13.637 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:32:13.644 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_leave
+16:32:13.644 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, remark, reason, end_time, approve_time, approveperson, create_time, start_time, agree]
+16:32:13.644 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:32:13.644 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:32:13.650 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_notify
+16:32:13.650 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [endtime, id, starttime, name]
+16:32:13.650 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:32:13.650 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_ex15o63s1f48u6qodwrn39ofy]
+16:32:13.656 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_car
+16:32:13.656 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, create_time, license]
+16:32:13.656 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:32:13.656 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_9dmq5oxvipoiof5d646xvy1b2, primary, fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:32:13.662 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_person
+16:32:13.662 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sex, phone, status, name, create_time, card_id]
+16:32:13.662 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pugojeiwngr3g5ga5sjlj6kd7]
+16:32:13.662 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pugojeiwngr3g5ga5sjlj6kd7, uk_b04s2pvej5dfgr2i5b9yyaed4, primary]
+16:32:13.667 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_reader
+16:32:13.667 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, gate_number, number, type, controle_id]
+16:32:13.667 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_bxq69cf23sfqqsrjlidwwuist]
+16:32:13.667 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_bxq69cf23sfqqsrjlidwwuist, primary]
+16:32:13.678 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.hibernate_sequences
+16:32:13.678 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sequence_next_hi_value, sequence_name]
+16:32:13.678 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:32:13.678 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+16:32:13.678 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+16:32:13.811 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@456946: defining beans [shiroDbRealm,organizationService,userService,carTypeService,controllerService,dispatchCarFormService,doorService,innerCarService,innerPersonService,leaveService,myRecordService,notifyService,recordServiceEndpoint,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource,entityManagerFactory,hibernateJpaVendorAdapter,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,innerPersonDao,cardDao,leaveDao,innerPersonRecordDao,doorDao,readerDao,innerCarRecordDao,userDao,carTypeDao,organizationDao,controllerDao,innerCarDao,notifyDao,dispatchCarFormDao,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,sylarlove.advance.moudle.sms.SmsService#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+16:32:14.384 [main] INFO  s.advance.moudle.sms.SmsService - 没有找到短信猫设备
+16:43:25.724 [main] WARN  org.unitils.core.ConfigurationLoader - No custom configuration file unitils.properties found.
+16:43:25.727 [main] INFO  org.unitils.core.ConfigurationLoader - No local configuration file unitils-local.properties found.
+16:43:25.884 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@131436e: startup date [Fri Dec 13 16:43:25 CST 2013]; root of context hierarchy
+16:43:25.949 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+16:43:26.218 [main] INFO  o.s.c.a.ClassPathBeanDefinitionScanner - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+16:43:26.672 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-sms.xml]
+16:43:26.809 [main] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer - Loading properties file from URL [file:/E:/myworkspace/advance/target/classes/jdbc.properties]
+16:43:26.817 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+16:43:26.904 [main] INFO  com.mchange.v2.log.MLog - MLog clients using log4j logging.
+16:43:26.991 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+16:43:27.125 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+16:43:27.268 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+16:43:27.276 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.2.6.Final}
+16:43:27.278 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:43:27.280 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+16:43:27.307 [main] INFO  org.hibernate.ejb.Ejb3Configuration - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:43:27.430 [main] INFO  o.h.s.j.c.i.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+16:43:27.491 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflt8y1t8lf131b0obss|f1fbb4, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflt8y1t8lf131b0obss|f1fbb4, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/vms?characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+16:43:27.751 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+16:43:27.762 [main] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+16:43:28.061 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+16:43:28.066 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+16:43:28.197 [main] INFO  o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+16:43:28.202 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.spi.UpdateTimestampsCache]; using defaults.
+16:43:28.254 [main] INFO  o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+16:43:28.255 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [org.hibernate.cache.internal.StandardQueryCache]; using defaults.
+16:43:28.292 [main] INFO  org.hibernate.validator.util.Version - Hibernate Validator 4.1.0.Final
+16:43:28.299 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:43:28.318 [main] INFO  o.h.v.e.r.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+16:43:28.576 [main] WARN  o.h.c.e.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [sylarlove.advance.model.main]; using defaults.
+16:43:28.802 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+16:43:28.803 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+16:43:28.807 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+16:43:28.825 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_organization
+16:43:28.825 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, index, name, parent_id]
+16:43:28.826 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_k8ujwspl3j59b9jf525q8wjsm]
+16:43:28.826 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_k8ujwspl3j59b9jf525q8wjsm, primary]
+16:43:28.832 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_permission
+16:43:28.832 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:43:28.832 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:43:28.832 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:43:28.838 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role
+16:43:28.838 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, name]
+16:43:28.838 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:43:28.839 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:43:28.848 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_role_sa_t_permission
+16:43:28.848 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_role_id, permissions_id]
+16:43:28.848 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:43:28.848 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_p4gfp08s3phx9uh31t5emggex, fk_e8ss406inge70m3q01q0kvjlv]
+16:43:28.855 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user
+16:43:28.855 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, username, phone, status, email, organization_id, create_time, realname, password]
+16:43:28.855 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_sy1r7u3vmw0vk9vc5luc3p0ks]
+16:43:28.855 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_sy1r7u3vmw0vk9vc5luc3p0ks, uk_j0juytie7lblr8wdok1pkbap1]
+16:43:28.862 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.sa_t_user_sa_t_role
+16:43:28.862 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sa_t_user_id, roles_id]
+16:43:28.862 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:43:28.862 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_d25962c8fwqmwea09r5cvs486, fk_li4mqqv6o717jed0hxq1c8lsh]
+16:43:28.867 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_car_type
+16:43:28.867 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, name]
+16:43:28.868 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:43:28.868 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_dltbu6u5nix3wep1wpofwktwe]
+16:43:28.873 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_card
+16:43:28.873 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [cardtype, id, number]
+16:43:28.874 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:43:28.874 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_fv3muenbn114v89v47h4562m4]
+16:43:28.880 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_controller
+16:43:28.880 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sn, door_id, ip]
+16:43:28.880 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1irrnet40nfb8v9ab0eenou6c]
+16:43:28.880 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_k43u6e2th1jg5qn1h181jtk2m, uk_opfyxopyoptth2rd0qagwf4qg, fk_1irrnet40nfb8v9ab0eenou6c, primary]
+16:43:28.886 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_dispatch_car_form
+16:43:28.887 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [car_id, reason, line, id, carmanager, approve_time, end_time, approveperson, create_time, target, start_time, driver, user, agree]
+16:43:28.887 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:43:28.887 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+16:43:28.893 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_door
+16:43:28.893 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, organization_id, name]
+16:43:28.893 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:43:28.893 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_mptuyuunm1nl4bvv7yy7nadx4]
+16:43:28.902 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car
+16:43:28.902 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, level, car_id, status, organization_id, create_time, user_id, car_type_id, notify_id, license]
+16:43:28.902 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, fk_7x2t8uhtbj0ae6atxqgjyjkng, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:43:28.903 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pytwejsmdx5albd6ie21dm9jm, fk_ktrss9ywxhbs6h0v9y7vqwx2h, fk_6ukb7qmicayhc07uo0q56lyw4, primary, fk_7x2t8uhtbj0ae6atxqgjyjkng, uk_r4sdxtyvfsonf9g1owhsjho0q, fk_2cbg0se1aiwf3raqv7kkxjcoj]
+16:43:28.909 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_car_record
+16:43:28.909 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, form_id, door_id, type, date]
+16:43:28.909 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy]
+16:43:28.909 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_h8n0j2t00bl9aogu9s0o9vofj, fk_73p60c5y1aq7bhuqy8x45dfjy, primary]
+16:43:28.916 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person
+16:43:28.917 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, certificate, sex, phone, status, organization_id, name, create_time, notify_id, card_id]
+16:43:28.917 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, fk_7ia9p7s8q6y96nm6mf1t7bd7v]
+16:43:28.917 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_sbxlbxcw14u1q4j7gp3uwg2eo, fk_7ia9p7s8q6y96nm6mf1t7bd7v, fk_ksrogfeueidd2ka96nhugnmw3, fk_d2lihx1sh8e4huo15g9aof8fx, primary]
+16:43:28.923 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_record
+16:43:28.923 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, status, leave_id, door_id, type, date]
+16:43:28.923 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_r0e079u7lsicwjpgknujloiv9, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:43:28.923 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_r0e079u7lsicwjpgknujloiv9, primary, fk_11q8b7yi54hpn5wyvy61b4i2n]
+16:43:28.928 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_inner_person_sa_t_user
+16:43:28.928 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [t_inner_person_id, users_id]
+16:43:28.928 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:43:28.929 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rho5nkus18o0c4898rmqqgdfl, fk_chlv6m9wekv4jx3u6wkejvepg]
+16:43:28.934 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_leave
+16:43:28.934 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, person_id, remark, reason, end_time, approve_time, approveperson, create_time, start_time, agree]
+16:43:28.934 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:43:28.934 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, fk_4lqjos9mr7yopxnuhvqiamkf9]
+16:43:28.941 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_notify
+16:43:28.941 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [endtime, id, starttime, name]
+16:43:28.941 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:43:28.941 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary, uk_ex15o63s1f48u6qodwrn39ofy]
+16:43:28.947 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_car
+16:43:28.947 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, car_id, status, create_time, license]
+16:43:28.947 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:43:28.947 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_9dmq5oxvipoiof5d646xvy1b2, primary, fk_kwelwsfr6gd7b6vmwbw0x1ov2]
+16:43:28.953 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_outer_person
+16:43:28.953 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, sex, phone, status, name, create_time, card_id]
+16:43:28.953 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pugojeiwngr3g5ga5sjlj6kd7]
+16:43:28.953 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_pugojeiwngr3g5ga5sjlj6kd7, uk_b04s2pvej5dfgr2i5b9yyaed4, primary]
+16:43:28.958 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.t_reader
+16:43:28.959 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [id, gate_number, number, type, controle_id]
+16:43:28.959 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_bxq69cf23sfqqsrjlidwwuist]
+16:43:28.959 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_bxq69cf23sfqqsrjlidwwuist, primary]
+16:43:28.969 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: vms.hibernate_sequences
+16:43:28.969 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sequence_next_hi_value, sequence_name]
+16:43:28.970 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+16:43:28.970 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+16:43:28.970 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+16:43:29.101 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@f71c07: defining beans [shiroDbRealm,organizationService,userService,carTypeService,controllerService,dispatchCarFormService,doorService,innerCarService,innerPersonService,leaveService,myRecordService,notifyService,recordServiceEndpoint,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource,entityManagerFactory,hibernateJpaVendorAdapter,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,userDao,readerDao,cardDao,carTypeDao,innerPersonRecordDao,doorDao,innerCarRecordDao,innerCarDao,controllerDao,dispatchCarFormDao,organizationDao,leaveDao,notifyDao,innerPersonDao,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,sylarlove.advance.moudle.sms.SmsService#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+16:43:29.652 [main] INFO  s.advance.moudle.sms.SmsService - 没有找到短信猫设备

@@ -89,7 +89,7 @@ public class MyRecordService implements IRecordService {
 				break;
 			}
 		} else {
-			logger.debug("未注册的卡号：{}", number);
+			logger.info("未注册的卡号：{}", number);
 			result = new RecordResult("none", "0");
 		}
 
@@ -116,7 +116,7 @@ public class MyRecordService implements IRecordService {
 			record.setStatus("warning");// 标记警告记录
 			String type = reader.getType() == StatusType.IN ? "进入" : "外出";
 			String message = person.getName() + " 违规" + type + ",记录编号："
-					+ record.getId() + "，系统已将该条记录标记为警告，" + "可回复此编号取消警告，也可不回复。";
+					+ record.getId() + "，系统已将该条记录标记为警告，" + "可回复*+此编号(如:*12345)取消警告，也可不回复。";
 			for (User user : person.getUsers()) {
 				if (user.getPhone() != null) {
 					smsService.sendMessage(user.getPhone(), message);

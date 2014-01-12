@@ -34,7 +34,7 @@ public class ReciveRecordCallBack implements IReciveCallBack {
 	@Inject
 	ISmsService smsService;
 	// 取消警告标记的短信匹配模式
-	String regex = "^\\d+$";
+	String regex = "^\\*\\d+$";
 	Pattern pattern = Pattern.compile(regex);
 	
 	@Override
@@ -51,7 +51,7 @@ public class ReciveRecordCallBack implements IReciveCallBack {
 	 * @param message
 	 */
 	private void cancleRecordWarning(User user,Matcher matcher) {
-		Long recordId=Long.valueOf(matcher.group());
+		Long recordId=Long.valueOf(matcher.group().substring(1));
 		InnerPersonRecord record=recordDao.findOne(recordId);
 		if(record!=null){
 			record.setStatus("normal");

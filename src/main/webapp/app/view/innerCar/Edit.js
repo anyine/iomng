@@ -13,7 +13,7 @@ Ext.define('VMS.view.innerCar.Edit', {
 		border:false,
 		items:[ {
 		xtype : 'treepicker',
-		maxPickerHeight : 160,
+		maxPickerHeight : 145,
 		allowBlank : false,
 		fieldLabel : '所属机构',
 		store : Ext.create('VMS.store.OrganizationStore'),

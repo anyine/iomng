@@ -6,7 +6,8 @@ Ext.define('VMS.model.Leave',{
 	        {name:'startTime',type:'date'},
 	        {name:'endTime',type:'date'},
 	        {name:'reason',type:'varchar'},
-	        {name:'agree',type:'boolean'}
+	        {name:'agree',type:'boolean'},
+	        {name:'createTime',type:'date'}
 	        ],
 	        idProperty:'id'
 });

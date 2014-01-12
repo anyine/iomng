@@ -15,16 +15,15 @@ import sylarlove.advance.model.PageContext;
  */
 public class PageUtil {
 	public static PageRequest getPageable(){
+		
 		Integer page=PageContext.getCurrentPage();//页数
+		if(page==null)page=1;
 		Integer size=PageContext.getPageSize();//每页大小
-		String sort=PageContext.getOrder();//顺序 asc  desc
-		String order=PageContext.getSort();//排序列表
-		Direction direction=Direction.ASC;
-		if("desc".equalsIgnoreCase(sort)){
-			direction=Direction.DESC;
-		}
-		//TODO 分页对象生成工具
-		PageRequest pageRequest=new PageRequest(page, size,direction,"ss");
+		if(size==null)size=20;//默认页大小
+		String order="id";//排序列表
+		Direction direction=Direction.DESC;
+		
+		PageRequest pageRequest=new PageRequest(page, size, direction,order);
 		return pageRequest;
 	} 
 }

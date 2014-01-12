@@ -434,6 +434,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+	<finalName>vms</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>

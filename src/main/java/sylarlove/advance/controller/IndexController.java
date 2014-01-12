@@ -4,6 +4,9 @@
 package sylarlove.advance.controller;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.validation.Valid;
 
@@ -14,8 +17,10 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import sylarlove.advance.exception.ServiceException;
 import sylarlove.advance.service.IUserService;
 
 /**
@@ -27,6 +32,23 @@ import sylarlove.advance.service.IUserService;
 public class IndexController {
 	@Inject
 	private IUserService userService;
+	
+	@RequestMapping(value="/changePassword",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,Object> changePwd(String oldPassword,String newPassword){
+		Map<String,Object> map=new HashMap<String,Object>();
+		try{
+		userService.changePassword(oldPassword,newPassword);
+		}catch(ServiceException e){
+			map.put("success", false);
+			map.put("msg", e.getMessage());
+			return map;
+		}
+		map.put("success",true);
+		map.put("msg", "修改成功。");
+		return map;
+	}
+	
 	@RequestMapping(value={"/index","/"})
 	public String index(){
 		return "index";

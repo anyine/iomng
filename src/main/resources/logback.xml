@@ -7,7 +7,7 @@
 	</appender>
 
 	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>logs/huijin.log</file>
+		<file>../logs/huijin-vms.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>logs/advance.%d{yyyy-MM-dd}.log</fileNamePattern>
 		</rollingPolicy>

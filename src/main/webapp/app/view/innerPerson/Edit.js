@@ -21,7 +21,7 @@ Ext.define('VMS.view.innerPerson.Edit', {
 		},
 		items : [ {
 			xtype : 'treepicker',
-			maxPickerHeight : 160,
+			maxPickerHeight : 145,
 			allowBlank : false,
 			fieldLabel : '所属机构',
 			store : Ext.create('VMS.store.OrganizationStore'),
@@ -70,7 +70,7 @@ Ext.define('VMS.view.innerPerson.Edit', {
 			name : 'userIds',
 			anchor : '100%',
 			fieldLabel : '请假负责人',
-			height : 200,
+			height : 190,
 			buttons : [ 'add', 'remove' ],
 			buttonsText : {
 				add : '添加到选中',

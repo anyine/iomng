@@ -3,6 +3,9 @@
  */
 package cn.huijin.vms.dao;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import cn.huijin.vms.model.InnerCar;
@@ -13,6 +16,8 @@ import cn.huijin.vms.model.InnerCar;
  *
  */
 public interface InnerCarDao extends JpaRepository<InnerCar, Long>{
+	
+	List<InnerCar> findByOrganizationIdIn(Collection<Long> ids);
 	/**
 	 * 通过卡号获取车辆对象
 	 * @param cardNumber

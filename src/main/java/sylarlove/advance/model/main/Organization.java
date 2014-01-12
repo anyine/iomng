@@ -46,7 +46,7 @@ public class Organization extends IdEntity{
 	@JoinColumn(name="parent_id")
 	public Organization  parent;
 	
-	@OneToMany(cascade={CascadeType.ALL},mappedBy="parent",fetch=FetchType.LAZY)
+	@OneToMany(cascade={CascadeType.ALL},mappedBy="parent",fetch=FetchType.EAGER)
 	@OrderBy("index ASC")
 	public List<Organization>  children=new ArrayList<Organization>();
 	

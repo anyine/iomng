@@ -7,16 +7,19 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import sylarlove.advance.exception.ExistedException;
+import sylarlove.advance.model.main.User;
 import cn.huijin.vms.dao.InnerCarDao;
 import cn.huijin.vms.model.CardType;
 import cn.huijin.vms.model.InnerCar;
 import cn.huijin.vms.model.StatusType;
+import cn.huijin.vms.util.OrgUtils;
 
 /**
  * @author 武继明
@@ -32,10 +35,13 @@ public class InnerCarService implements IInnerCarService {
 
 	@Override
 	public List<InnerCar> list() {
-
-		return innerCarDao.findAll();
+		User user=(User)SecurityUtils.getSubject().getPrincipal();
+		
+		List<Long> ids=OrgUtils.getAllIds(user.getOrganization());
+		
+		return innerCarDao.findByOrganizationIdIn(ids);
 	}
-
+	
 	@Override
 	public void add(InnerCar innerCar) throws ExistedException {
 		// 检查车辆rfid是否重复，有重复则抛出异常

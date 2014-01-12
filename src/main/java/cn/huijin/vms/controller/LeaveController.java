@@ -57,5 +57,18 @@ public class LeaveController {
 		}
 		return result;
 	}
+	@RequestMapping(value="/changeAgree",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,Object> changeAgree(Long id){
+		Map<String,Object> result=new HashMap<String, Object>();
+		try {
+			leaveService.changeAgree(id);
+			result.put("success", true);
+		} catch (ExistedException e) {
+			result.put("success", false);
+			result.put("message",e.getMessage());
+		}
+		return result;
+	}
 	
 }

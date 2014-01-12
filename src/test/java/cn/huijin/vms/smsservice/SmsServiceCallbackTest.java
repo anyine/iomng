@@ -26,7 +26,7 @@ public class SmsServiceCallbackTest extends UnitilsJUnit4{
 	public void callBack(){
 		
 		for(IReciveCallBack callBack: smsService.getReciveCallBacks()){
-			callBack.process("15288843691","196611*1");
+			callBack.process("15288843691"," 201312191130 sy: 回家明天上午去二院体检");
 		}
 	}
 }

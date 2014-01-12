@@ -94,4 +94,12 @@ public class LeaveService implements ILeaveService {
 					+"提交的外出申请"+(agree?success:fail));
 		}
 	}
+	@Override
+	public void changeAgree(Long id) {
+		Leave leave=leaveDao.findOne(id);
+		if(leave!=null){
+			User user=(User)SecurityUtils.getSubject().getPrincipal();
+			this.approve(leave, user, !leave.getAgree());
+		}
+	}
 }

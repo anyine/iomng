@@ -81,5 +81,14 @@ public class UserService implements IUserService{
 	public void logout() {
 		SecurityUtils.getSubject().logout();
 	}
+	@Override
+	public void changePassword(String oldPassword, String newPassword) {
+		User user=(User)SecurityUtils.getSubject().getPrincipal();
+		if(!ShiroDbRealm.validatePassword(oldPassword, user.getPassword())){
+			throw new sylarlove.advance.exception.ServiceException("旧密码不正确。");
+		}
+		user.setPassword(ShiroDbRealm.encryptPassword(newPassword));
+		userDao.save(user);
+	}
 	
 }

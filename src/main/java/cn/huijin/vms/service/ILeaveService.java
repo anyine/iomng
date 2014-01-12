@@ -37,4 +37,9 @@ public interface ILeaveService {
 	 * @param agree
 	 */
 	void approve(Leave leave, User user, Boolean agree);
+	/**
+	 * 改变申请批准状态
+	 * @param id
+	 */
+	void changeAgree(Long id);
 }
