@@ -42,6 +42,7 @@ public class ReciveLeaveCallBack implements IReciveCallBack {
 	// 申请信息匹配模式
 	String regex = "(\\d{12} )?(\\d{12} )?(\\bsy.+)";
 	Pattern pattern = Pattern.compile(regex);
+
 	@Override
 	public void process(String fromPhoneNumber, String message) {
 		Matcher matcher = pattern.matcher(message);
@@ -51,8 +52,8 @@ public class ReciveLeaveCallBack implements IReciveCallBack {
 			if (person != null) {
 				smsAddLeave(person, matcher);
 			}
-		}else{
-			logger.info("不正确格式的短信：{}",message);
+		} else {
+			logger.info("不正确格式的短信：{}", message);
 		}
 	}
 
@@ -90,15 +91,15 @@ public class ReciveLeaveCallBack implements IReciveCallBack {
 		Date startTime = parse2Date(matcher.group(1));
 		Date endTime = parse2Date(matcher.group(2));
 		String reason = matcher.group(3).substring(3);
-		if (startTime == null&&endTime == null) {
+		if (startTime == null && endTime == null) {
 			// 默认当前时间为起始时间
 			leave.setStartTime(new Date());
 			// 默认结束时间为当前时间之后两小时
 			leave.setEndTime(DateUtils.addHours(new Date(), 2));
-		}else	if (endTime == null) {//仅仅第二个为null
+		} else if (endTime == null) {// 仅仅第二个为null
 			leave.setStartTime(new Date());
 			leave.setEndTime(startTime);
-		}else{
+		} else {
 			leave.setStartTime(startTime);
 			leave.setEndTime(endTime);
 		}
@@ -117,25 +118,25 @@ public class ReciveLeaveCallBack implements IReciveCallBack {
 		if (StringUtils.isBlank(dateStr)) {
 			return null;
 		}
-		dateStr=StringUtils.trim(dateStr);
+		dateStr = StringUtils.trim(dateStr);
 		Date date = null;
 		try {
 			// 第一次尝试
-			date=DateUtils.parseDate( dateStr,"yyyyMMddHHmm");
+			date = DateUtils.parseDate(dateStr, "yyyyMMddHHmm");
 			logger.debug("成功解析日期，格式为：yyyyMMddHHmm");
 		} catch (ParseException e1) {
 			try {
 				// 第二次尝试
-				date=DateUtils.parseDate(dateStr,"yyyy-MM-dd HH:mm");
+				date = DateUtils.parseDate(dateStr, "yyyy-MM-dd HH:mm");
 				logger.debug("成功解析日期，格式为：yyyy-MM-dd HH:mm");
 			} catch (ParseException e2) {
 
 				try {
-					date=DateUtils.parseDate( dateStr,"yyyy年MM月dd日 HH时mm分");
+					date = DateUtils.parseDate(dateStr, "yyyy年MM月dd日 HH时mm分");
 					logger.debug("成功解析日期，格式为：yyyy年MM月dd日 HH时mm分");
 				} catch (ParseException e3) {
 					// 第三次尝试
-					date=DateUtils.parseDate( dateStr,"yyyy/MM/dd HH:mm");
+					date = DateUtils.parseDate(dateStr, "yyyy/MM/dd HH:mm");
 					logger.debug("成功解析日期，格式为：yyyy/MM/dd HH:mm");
 				}
 			}
@@ -143,12 +144,13 @@ public class ReciveLeaveCallBack implements IReciveCallBack {
 
 		return date;
 	}
-	public static void main(String args[]){
+
+	public static void main(String args[]) {
 		String regex = "(\\d{12} )?(\\d{12} )?(\\bsy:.+)";
-			Pattern pattern = Pattern.compile(regex);
-		String message="201312161800 sy:回家";
+		Pattern pattern = Pattern.compile(regex);
+		String message = "201312161800 sy:回家";
 		Matcher matcher = pattern.matcher(message);
-		if (matcher.find()){
+		if (matcher.find()) {
 			System.out.println(matcher.group());
 			System.out.println(matcher.group(1));
 			System.out.println(matcher.group(2));
