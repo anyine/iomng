@@ -1,13 +1,13 @@
 package cn.huijin.vms.service.sms.parser;
 
-public class Record implements Token {
+public class RecordToken implements Token {
 	private Long recordId;
 
-	public Record() {
+	public RecordToken() {
 
 	}
 
-	public Record(Long recordId) {
+	public RecordToken(Long recordId) {
 		this.recordId = recordId;
 	}
 

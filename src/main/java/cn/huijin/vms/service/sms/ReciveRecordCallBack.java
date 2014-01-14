@@ -3,7 +3,7 @@
  */
 package cn.huijin.vms.service.sms;
 
-import java.util.regex.Matcher;
+import java.text.ParseException;
 import java.util.regex.Pattern;
 
 import javax.inject.Inject;
@@ -17,6 +17,9 @@ import sylarlove.advance.moudle.sms.IReciveCallBack;
 import sylarlove.advance.moudle.sms.ISmsService;
 import cn.huijin.vms.dao.InnerPersonRecordDao;
 import cn.huijin.vms.model.InnerPersonRecord;
+import cn.huijin.vms.service.sms.parser.MessageParser;
+import cn.huijin.vms.service.sms.parser.RecordToken;
+import cn.huijin.vms.service.sms.parser.Token;
 
 /**
  * 取消警告标记的短信回调
@@ -40,27 +43,26 @@ public class ReciveRecordCallBack implements IReciveCallBack {
 
 	@Override
 	public void process(String fromPhoneNumber, String message) {
-		Matcher matcher = pattern.matcher(message);
-		if (matcher.find()) {
-			User user = userDao.findByPhone(fromPhoneNumber);
-			if (user != null) {
-				cancleRecordWarning(user, matcher);
+		try {
+			Token t = MessageParser.parse(message);
+			if (t instanceof RecordToken) {
+				RecordToken r = (RecordToken) t;
+				User user = userDao.findByPhone(fromPhoneNumber);
+				if (user != null) {
+					InnerPersonRecord record = recordDao.findOne(r
+							.getRecordId());
+					if (record != null) {
+						record.setStatus("normal");
+						recordDao.save(record);
+					} else {
+						String str = "没有找到编号为" + r.getRecordId()
+								+ "的记录信息。请核实编号。";
+						smsService.sendMessage(user.getPhone(), str);
+					}
+				}
 			}
-		}
-	}
-
-	/**
-	 * @param message
-	 */
-	private void cancleRecordWarning(User user, Matcher matcher) {
-		Long recordId = Long.valueOf(matcher.group().substring(1));
-		InnerPersonRecord record = recordDao.findOne(recordId);
-		if (record != null) {
-			record.setStatus("normal");
-			recordDao.save(record);
-		} else {
-			String str = "没有找到编号为" + recordId + "的记录信息。请核实编号。";
-			smsService.sendMessage(user.getPhone(), str);
+		} catch (ParseException e) {
+			e.printStackTrace();
 		}
 	}
 

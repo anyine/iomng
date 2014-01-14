@@ -2,12 +2,12 @@ package cn.huijin.vms.service.sms.parser;
 
 import java.util.Date;
 
-public class Leave implements Token {
+public class LeaveToken implements Token {
 	private Date start;
 	private Date end;
 	private String reason;
 
-	public Leave(Date start, Date end, String reason) {
+	public LeaveToken(Date start, Date end, String reason) {
 		super();
 		this.start = start;
 		this.end = end;

@@ -1,6 +1,6 @@
 package cn.huijin.vms.service.sms.parser;
 
-public class Approve implements Token {
+public class ApproveToken implements Token {
 	/**
 	 * 外出申请ID
 	 */
@@ -11,11 +11,11 @@ public class Approve implements Token {
 	 */
 	private Boolean agree;
 
-	public Approve() {
+	public ApproveToken() {
 
 	}
 
-	public Approve(Long leaveId, Boolean agree) {
+	public ApproveToken(Long leaveId, Boolean agree) {
 		super();
 		this.leaveId = leaveId;
 		this.agree = agree;
