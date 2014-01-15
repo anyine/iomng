@@ -4,7 +4,6 @@
 package cn.huijin.vms.service.sms;
 
 import java.text.ParseException;
-import java.util.regex.Pattern;
 
 import javax.inject.Inject;
 
@@ -37,9 +36,6 @@ public class ReciveRecordCallBack implements IReciveCallBack {
 	UserDao userDao;
 	@Inject
 	ISmsService smsService;
-	// 取消警告标记的短信匹配模式
-	String regex = "^\\*\\d+$";
-	Pattern pattern = Pattern.compile(regex);
 
 	@Override
 	public void process(String fromPhoneNumber, String message) {

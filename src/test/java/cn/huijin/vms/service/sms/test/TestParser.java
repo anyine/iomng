@@ -69,12 +69,26 @@ public class TestParser {
 		
 		assertLeave("1112-1212出差", "2014-01-24 11:12:00",
 				"2014-01-24 12:12:00", "出差");
+
+		assertLeave("1112 1212出差", "2014-01-24 11:12:00",
+				"2014-01-24 12:12:00", "出差");
+
+		assertLeave("1112  1212出差", "2014-01-24 11:12:00",
+				"2014-01-24 12:12:00", "出差");
+		
+		assertLeave("1112***1212出差", "2014-01-24 11:12:00",
+				"2014-01-24 12:12:00", "出差");
 		
 		//同意外出申请
-		assertApprove("10 1", true, 10L);
-		assertApprove("2 0", false, 2L);
-		assertApprove("10(1", true, 10L);
-		assertApprove("2)0", false, 2L);
+		assertApprove("1 10 ", true, 10L);
+		assertApprove("0*2", false, 2L);
+		assertApprove("0*_-2 其他的", false, 2L);
+		assertApprove("0* -2", false, 2L);
+		assertApprove("1 10", true, 10L);
+		assertApprove("0  2", false, 2L);
+		
+//		assertApprove("2342)0", false, 2342L);
+//		assertApprove("122)0", false, 122L);
 		
 		//标记车辆外出违规
 		assertRecord("1000", 1000L);

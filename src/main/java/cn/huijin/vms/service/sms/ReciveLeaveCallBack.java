@@ -3,15 +3,8 @@
  */
 package cn.huijin.vms.service.sms;
 
-import java.text.ParseException;
-import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import javax.inject.Inject;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,10 +34,6 @@ public class ReciveLeaveCallBack implements IReciveCallBack {
 	ILeaveService leaveService;
 	@Inject
 	ISmsService smsService;
-
-	// 申请信息匹配模式
-	String regex = "(\\d{12} )?(\\d{12} )?(\\bsy.+)";
-	Pattern pattern = Pattern.compile(regex);
 
 	@Override
 	public void process(String fromPhoneNumber, String message) {
