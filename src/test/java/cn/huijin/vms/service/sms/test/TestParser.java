@@ -80,12 +80,9 @@ public class TestParser {
 				"2014-01-24 12:12:00", "出差");
 		
 		//同意外出申请
-		assertApprove("1 10 ", true, 10L);
-		assertApprove("0*2", false, 2L);
-		assertApprove("0*_-2 其他的", false, 2L);
-		assertApprove("0* -2", false, 2L);
-		assertApprove("1 10", true, 10L);
-		assertApprove("0  2", false, 2L);
+		assertApprove("010", true, 10L);
+		assertApprove("002", false, 2L);
+		assertApprove("0099", false, 99L);
 		
 //		assertApprove("2342)0", false, 2342L);
 //		assertApprove("122)0", false, 122L);

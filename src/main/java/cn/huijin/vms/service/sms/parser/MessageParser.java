@@ -39,7 +39,7 @@ public class MessageParser {
 	private static Pattern leave2 = Pattern
 			.compile("^([1-9]\\d{2,3})[^0-9]{1,3}([1-9]\\d{2,3})([^0-9].*)$");
 	private static Pattern approve = Pattern
-			.compile("^(0|1)[^0-9]{1,3}([1-9]\\d{0,2}).*$");
+			.compile("^(0|00)([1-9]\\d*)$");
 	private static Pattern record = Pattern.compile("^([1-9]\\d*)$");
 
 	public static Token parse(String message) throws ParseException {
@@ -64,7 +64,7 @@ public class MessageParser {
 
 		if (mapprove.find()) {
 			Long id = Long.parseLong(mapprove.group(2));
-			if (mapprove.group(1).equals("1")) {
+			if (mapprove.group(1).equals("0")) {
 				return new ApproveToken(id, true);
 			}
 			return new ApproveToken(id, false);
