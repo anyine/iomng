@@ -38,6 +38,12 @@ public class Leave extends IdEntity{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * simple id
+	 * 简单ID 循环取值 用于简化短信审批操作 
+	 */
+	private Long simpleId;
+	
 	@NotNull(message="必须填写请假人。")
 	@ManyToOne
 	@JoinColumn(name="person_id")
@@ -49,7 +55,7 @@ public class Leave extends IdEntity{
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="start_time")
-	private Date startTime=new Date();;
+	private Date startTime=new Date();
 
 	@NotNull(message="必须填写归队时间。")
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -154,6 +160,14 @@ public class Leave extends IdEntity{
 
 	public void setPersonRecord(Set<InnerPersonRecord> personRecord) {
 		this.personRecord = personRecord;
+	}
+
+	public Long getSimpleId() {
+		return simpleId;
+	}
+
+	public void setSimpleId(Long simpleId) {
+		this.simpleId = simpleId;
 	}
 	
 }

@@ -42,4 +42,6 @@ public interface ILeaveService {
 	 * @param id
 	 */
 	void changeAgree(Long id);
+	
+	Leave findBySimpleId(Long leaveId);
 }

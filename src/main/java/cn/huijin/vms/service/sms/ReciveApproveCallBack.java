@@ -48,7 +48,7 @@ public class ReciveApproveCallBack implements IReciveCallBack {
 				User user = userDao.findByPhone(fromPhoneNumber);
 				if (user != null) {
 					// 返回审批结果提示
-					Leave leave = leaveService.findOne(a.getLeaveId());
+					Leave leave = leaveService.findBySimpleId(a.getLeaveId());
 					if (leave != null) {
 						leaveService.approve(leave, user, a.getAgree());
 						String str = "短信审批操作成功。您"
