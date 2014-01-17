@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -26,7 +27,7 @@ public class Role extends IdEntity{
 	private String name;
 	private String sn;
 	
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="role_id")
 	private List<Permission> permissions=new ArrayList<Permission>();
 	

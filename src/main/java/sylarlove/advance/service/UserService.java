@@ -90,5 +90,10 @@ public class UserService implements IUserService{
 		user.setPassword(ShiroDbRealm.encryptPassword(newPassword));
 		userDao.save(user);
 	}
+	@Override
+	public void addPermission(Long id, List<Long> permissionIds) {
+		User user=userDao.findOne(id);
+		
+	}
 	
 }

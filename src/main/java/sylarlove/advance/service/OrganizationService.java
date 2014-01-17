@@ -7,12 +7,15 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.huijin.vms.util.OrgUtils;
 import sylarlove.advance.dao.OrganizationDao;
 import sylarlove.advance.exception.ExistedException;
 import sylarlove.advance.model.main.Organization;
+import sylarlove.advance.model.main.User;
 
 /**
  * @author 武继明
@@ -30,8 +33,8 @@ public class OrganizationService implements IOrganizationService {
 
 		Organization exist = null;
 		if (organization.getParent() != null) {
-			exist=organizationDao.findByParentIdAndName(organization.getParent()
-					.getId(), organization.getName());
+			exist = organizationDao.findByParentIdAndName(organization
+					.getParent().getId(), organization.getName());
 		}
 		if (exist != null) {
 			throw new ExistedException("机构已存在。");
@@ -41,7 +44,8 @@ public class OrganizationService implements IOrganizationService {
 
 	@Override
 	public Organization getRoot() {
-		return organizationDao.findOne(0L);
+		User user = (User) SecurityUtils.getSubject().getPrincipal();
+		return organizationDao.findOne(user.getOrganization().getId());
 	}
 
 	@Override

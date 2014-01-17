@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -80,7 +81,7 @@ public class User extends IdEntity{
 	@Length(max=16)
 	@Column(nullable=false,length=16)
 	private String status="enabled";
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="user_id")
 	private List<Role> roles=new ArrayList<Role>();
 	

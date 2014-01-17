@@ -3,7 +3,9 @@
  */
 package sylarlove.advance.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -87,6 +89,23 @@ public class UserController {
 		}
 		try {
 			userService.add(user);
+			result.put("success", true);
+		} catch (ExistedException e) {
+			result.put("success", false);
+			result.put("message",e.getMessage());
+		}
+		return result;
+	}
+	@RequestMapping(value="/permission",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,Object> permission(Long id,String menuId){
+		Map<String,Object> result=new HashMap<String, Object>();
+		List<Long> permissionIds=new ArrayList<Long>();
+		for(String s:menuId.split(",")){
+			permissionIds.add(Long.valueOf(s));
+		}
+		try {
+			userService.addPermission(id,permissionIds);
 			result.put("success", true);
 		} catch (ExistedException e) {
 			result.put("success", false);

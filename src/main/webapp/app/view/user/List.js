@@ -29,5 +29,8 @@ Ext.define('VMS.view.user.List', {
 	tbar : [ {
 		text : '新增',
 		action : 'add'
+	},{
+		text : '授权',
+		action : 'permission'
 	}]
 });

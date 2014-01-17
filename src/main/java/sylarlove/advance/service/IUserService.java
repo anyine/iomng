@@ -62,4 +62,5 @@ public interface IUserService {
 	 */
 	void logout();
 	void changePassword(String oldPassword, String newPassword);
+	void addPermission(Long id, List<Long> permissionIds);
 }

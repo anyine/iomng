@@ -1,6 +1,6 @@
 Ext.define('VMS.controller.UserCtrl', {
 	extend : 'Ext.app.Controller',
-	views : [ 'user.List', 'user.Edit' ],
+	views : [ 'user.List', 'user.Edit','user.PermissionEdit' ],
 	stores : [ 'UserStore','OrganizationStore' ],
 	models : [ 'User' ],
 
@@ -11,14 +11,39 @@ Ext.define('VMS.controller.UserCtrl', {
 			},
 			'userlist button[action=add]' : {
 				click : this.onAdd
+			},'userlist button[action=permission]' : {
+				click : this.onPermission
 			},
 			'useredit button[action=save]' : {
 				click : this.onSave
+			},
+			'permissionedit button[action=save]' : {
+				click : this.onpermissionSave
 			},
 			'userlist' : {
 				itemdblclick : this.onItemdblclick
 			}
 		});
+	},
+	onAdd : function(me, e, eo) {
+		var edit = Ext.widget("useredit");
+		edit.show();
+	},
+	onPermission:function(me,e,o){
+		var list=me.up("userlist");
+		var users=list.getSelectionModel().getSelection();
+		if(users.length){
+			var user=users[0];
+			var edit = Ext.widget("permissionedit",{user:user});
+			edit.show();
+			edit.setTitle("授权-"+user.get('realname'));
+			var form = edit.down('form').getForm();
+			form.loadRecord(user);
+			
+		}else{
+			Ext.Msg.alert('提示','请选择要授权的对象。');
+		}
+		
 	},
 	onDelete : function(v, ri, ci, i, e, rec, row) {
 		var store = this.getUserStoreStore();
@@ -45,9 +70,22 @@ Ext.define('VMS.controller.UserCtrl', {
 		});
 
 	},
-	onAdd : function(me, e, eo) {
-		var edit = Ext.widget("useredit");
-		edit.show();
+onpermissionSave:function(me,e,eo){
+	var win = me.up('window');
+	var form = win.down('form');
+	form.submit({
+		url : 'user/permission',
+		method : 'post',
+		success : function(form, action) {
+			Ext.example.msg('提示', '授权成功。');
+			win.close();
+		},
+		failure : function(form, action) {
+			var result = Ext.JSON
+					.decode(action.response.responseText);
+			Ext.Msg.alert('提示', result.message);
+		}
+	});
 	},
 	onSave : function(me, e, eo) {
 		var win = me.up('window');
