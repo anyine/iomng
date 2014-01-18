@@ -3,6 +3,9 @@
  */
 package cn.huijin.vms.dao;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import cn.huijin.vms.model.InnerPerson;
@@ -14,6 +17,8 @@ import cn.huijin.vms.model.InnerPerson;
  *
  */
 public interface InnerPersonDao extends JpaRepository<InnerPerson, Long>{
+
+	List<InnerPerson> findByUsersId(Long id);
 	/**
 	 * 通过卡号获取人员对象
 	 * @param cardNumber

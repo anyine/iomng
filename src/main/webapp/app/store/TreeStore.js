@@ -3,7 +3,7 @@ Ext.define('VMS.store.TreeStore', {
     autoLoad:true,
     proxy:{
     	type:'ajax',
-    	url:'data/menu.json',
+    	url:'data/menu.jsp',
     	reader:'json'
     }
 });
