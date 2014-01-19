@@ -57,7 +57,7 @@ public class ReciveLeaveCallBack implements IReciveCallBack {
 		} catch (Exception e) {
 			logger.info("格式有错误短信：{}", message);
 			String str = "短信格式有误：正确的短信格式为："
-					+ " [时间]空格[时间]空格sy:事由。 看起来应该像这样：201312250530 201312261507 sy回家";
+					+ " [时间]空格[时间]事由。 看起来应该像这样：825 1507回家";
 			smsService.sendMessage(fromPhoneNumber, str);
 		}
 	}
