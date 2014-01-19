@@ -22,8 +22,27 @@ Ext.define('VMS.controller.UserCtrl', {
 			},
 			'userlist' : {
 				itemdblclick : this.onItemdblclick
+			},
+			'permissionedit':{
+				show:this.showInit
 			}
 		});
+	},
+	showInit:function(me,e){
+		var f=me.down('itemselector');
+		Ext.Ajax.request({
+		    url: 'user/getMenuPermissionId',
+		    async : false,
+		    params: {
+		        id: me.user.get('id')
+		    },
+		    success: function(response){
+		        var text = response.responseText;
+		        var r=Ext.decode(text);
+		        f.setValue(r.ids);
+		    }
+		});
+		
 	},
 	onAdd : function(me, e, eo) {
 		var edit = Ext.widget("useredit");

@@ -9,6 +9,7 @@ import org.apache.shiro.authc.AuthenticationException;
 
 import sylarlove.advance.exception.ExistedException;
 import sylarlove.advance.exception.ServiceException;
+import sylarlove.advance.model.main.Role;
 import sylarlove.advance.model.main.User;
 
 /**
@@ -63,4 +64,5 @@ public interface IUserService {
 	void logout();
 	void changePassword(String oldPassword, String newPassword);
 	void addPermission(Long id, List<Long> permissionIds);
+	Role getMenuRole(Long id);
 }

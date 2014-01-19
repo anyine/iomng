@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -81,7 +82,7 @@ public class User extends IdEntity{
 	@Length(max=16)
 	@Column(nullable=false,length=16)
 	private String status="enabled";
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER,cascade={CascadeType.PERSIST})
 	@JoinColumn(name="user_id")
 	private List<Role> roles=new ArrayList<Role>();
 	

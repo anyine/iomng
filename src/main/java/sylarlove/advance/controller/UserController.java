@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import sylarlove.advance.exception.ExistedException;
 import sylarlove.advance.exception.ServiceException;
+import sylarlove.advance.model.main.Permission;
+import sylarlove.advance.model.main.Role;
 import sylarlove.advance.model.main.User;
 import sylarlove.advance.service.IUserService;
 
@@ -57,6 +59,21 @@ public class UserController {
 			return result;
 	}
 	
+	@RequestMapping(value="/getMenuPermissionId")
+	@ResponseBody
+	public Map<String,Object>  getMenuPermissionId(Long id){
+		Map<String,Object> result=new HashMap<String, Object>();
+		Role role=userService.getMenuRole(id);
+		List<Long> ids=new ArrayList<Long>();
+		if(role!=null){
+			for(Permission p: role.getPermissions()){
+				ids.add(p.getId());
+			}
+		}
+		
+		result.put("ids", ids);
+		return result;
+	}
 	
 	@RequestMapping(value="/delete",method=RequestMethod.POST)
 	@ResponseBody

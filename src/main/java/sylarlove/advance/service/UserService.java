@@ -3,6 +3,7 @@
  */
 package sylarlove.advance.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -17,8 +18,12 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import sylarlove.advance.dao.PermissionDao;
+import sylarlove.advance.dao.RoleDao;
 import sylarlove.advance.dao.UserDao;
 import sylarlove.advance.exception.ExistedException;
+import sylarlove.advance.model.main.Permission;
+import sylarlove.advance.model.main.Role;
 import sylarlove.advance.model.main.User;
 import sylarlove.advance.realm.ShiroDbRealm;
 
@@ -34,7 +39,10 @@ public class UserService implements IUserService{
 	static final Logger logger=LoggerFactory.getLogger(UserService.class);
 	@Inject
 	private UserDao userDao;
-	
+	@Inject
+	private RoleDao roleDao;
+	@Inject
+	private PermissionDao permissionDao;
 	@Override
 	public List<User> list() {
 		return userDao.findAll(new Sort(Direction.ASC, "id"));
@@ -66,6 +74,12 @@ public class UserService implements IUserService{
 			logger.warn("尝试删除超级管理员账户。");
 			throw new ServiceException("超级管理员账户不能删除。");
 		}
+		//删除菜单角色
+		User u=userDao.findOne(id);
+		Role r=roleDao.findByName(u.getUsername());
+		if(r!=null){
+			roleDao.delete(r);
+		}
 		userDao.delete(id);
 	}
 	@Override
@@ -93,7 +107,20 @@ public class UserService implements IUserService{
 	@Override
 	public void addPermission(Long id, List<Long> permissionIds) {
 		User user=userDao.findOne(id);
-		
+		Role role=roleDao.findByName(user.getUsername());
+		if(role==null){
+			role=new Role();
+			role.setName(user.getUsername());
+			role.setSn(user.getUsername());
+		}
+		List<Permission> permissions=permissionDao.findAll(permissionIds);
+		role.setPermissions(permissions);
+		roleDao.save(role);
+		user.setRoles(Arrays.asList(role));
+	}
+	@Override
+	public Role getMenuRole(Long id) {
+		return roleDao.findByName(userDao.findOne(id).getUsername());
 	}
 	
 }

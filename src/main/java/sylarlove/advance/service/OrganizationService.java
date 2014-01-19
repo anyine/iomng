@@ -44,8 +44,7 @@ public class OrganizationService implements IOrganizationService {
 
 	@Override
 	public Organization getRoot() {
-		User user = (User) SecurityUtils.getSubject().getPrincipal();
-		return organizationDao.findOne(user.getOrganization().getId());
+		return organizationDao.findOne(0L);
 	}
 
 	@Override

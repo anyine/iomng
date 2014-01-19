@@ -23,6 +23,7 @@ import cn.huijin.vms.dao.InnerPersonDao;
 import cn.huijin.vms.dao.LeaveDao;
 import cn.huijin.vms.model.InnerPerson;
 import cn.huijin.vms.model.Leave;
+import cn.huijin.vms.util.OrgUtils;
 
 /**
  * 
@@ -81,7 +82,8 @@ public class LeaveService implements ILeaveService {
 
 	@Override
 	public List<Leave> list() {
-		return leaveDao.findAll();
+		User user=(User)SecurityUtils.getSubject().getPrincipal();
+		return leaveDao.findByPersonUsersId(user.getId());
 	}
 
 	@Override
