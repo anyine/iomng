@@ -33,14 +33,14 @@ Ext.define('VMS.view.user.PermissionEdit', {
 			imagePath : 'ux/css/images/',
 			store : Ext.create('Ext.data.ArrayStore', {
 				fields : [ 'id', 'name'],
-				data:[["waichushenqing",'外出申请'],
-				      ["cheliangchuruchaxun",'车辆出入记录'],
-				      ["renyuanchurujil",'人员出入记录'],
-				      ["cheliangguanli",'车辆管理'],
-				      ["renyuanguanli",'人员管理'],
-				      ["cheliangleixingweihu",'车辆类型维护'],
-				      ["yonghuguanli",'用户管理'],
-				      ["duanxintongzhishijianguanli",'短信通知时间管理']]
+				data:[["1",'外出申请'],
+				      ["2",'车辆出入记录'],
+				      ["3",'人员出入记录'],
+				      ["4",'车辆管理'],
+				      ["5",'人员管理'],
+				      ["6",'车辆类型维护'],
+				      ["7",'用户管理'],
+				      ["8",'短信通知时间管理']]
 			}),
 			displayField : 'name',
 			valueField : 'id',
