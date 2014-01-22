@@ -58,11 +58,8 @@ public class MessageParser {
 		}
 
 		if (mleave1.find()) {
+			Date start = current();
 			Date end = toDate(mleave1.group(1));
-			Date start = addHours(end, -2);
-			if (start.before(current())) {
-				start = current();
-			}
 			return new LeaveToken(start, end, mleave1.group(2).trim());
 		}
 
