@@ -38,13 +38,14 @@ public class MessageParser {
 			.compile("^([1-9]\\d{2,3})([^0-9].*)$");
 	private static Pattern leave2 = Pattern
 			.compile("^([1-9]\\d{2,3})[^0-9]{1,3}([1-9]\\d{2,3})([^0-9].*)$");
-	private static Pattern approve = Pattern
-			.compile("^(0|00)([1-9]\\d*)$");
+	private static Pattern leave3 = Pattern.compile("^([^0-9].*)$");
+	private static Pattern approve = Pattern.compile("^(0|00)([1-9]\\d*)$");
 	private static Pattern record = Pattern.compile("^([1-9]\\d*)$");
 
 	public static Token parse(String message) throws ParseException {
 		Matcher mleave1 = leave1.matcher(message);
 		Matcher mleave2 = leave2.matcher(message);
+		Matcher mleave3 = leave3.matcher(message);
 		Matcher mapprove = approve.matcher(message);
 		Matcher mrecord = record.matcher(message);
 		if (mleave2.find()) {
@@ -57,9 +58,18 @@ public class MessageParser {
 		}
 
 		if (mleave1.find()) {
-			Date start = toDate(mleave1.group(1));
-			Date end = addHours(start, 2);
+			Date end = toDate(mleave1.group(1));
+			Date start = addHours(end, -2);
+			if (start.before(current())) {
+				start = current();
+			}
 			return new LeaveToken(start, end, mleave1.group(2).trim());
+		}
+
+		if (mleave3.find()) {
+			Date start = current();
+			Date end = addHours(start, 2);
+			return new LeaveToken(start, end, mleave3.group(1).trim());
 		}
 
 		if (mapprove.find()) {
